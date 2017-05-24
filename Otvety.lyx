@@ -1,0 +1,5929 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Вероятностное пространство.
+ Случайные величины, дискретные и непрерывные.
+ Фукнкции распределения.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Вероятностное пространство – это тройка 
+\series default
+
+\begin_inset Formula $\left(\Omega,{\cal F},{\cal P}\right)$
+\end_inset
+
+, где
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Omega$
+\end_inset
+
+ - множество (описывает 
+\series bold
+пространство событий
+\series default
+).
+ Элементы будут обозначаться 
+\begin_inset Formula $\omega\in\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ - 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-
+\series bold
+алгебра подмножеств
+\series default
+ множества 
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula ${\cal P}$
+\end_inset
+
+ - 
+\series bold
+вероятностная мера
+\series default
+, 
+\begin_inset Formula ${\cal P}\left(\Omega\right)=1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\sigma$
+\end_inset
+
+-алгебра замкнута относительно операций счетного объединения и пересечения.
+ Также, если 
+\begin_inset Formula $\omega\in{\cal F}\Rightarrow\bar{\omega}\in{\cal F}$
+\end_inset
+
+ (содержит дополнение к событию).
+\end_layout
+
+\begin_layout Standard
+\noindent
+Эксперимент: бросаем кубик: 
+\begin_inset Formula $\Omega=\left\{ \omega_{1},\omega_{2},...,\omega_{6}\right\} $
+\end_inset
+
+ 
+\begin_inset Formula $\omega_{1}$
+\end_inset
+
+ - на верхней грани 1 точка, ...
+ , 
+\begin_inset Formula $\omega_{6}$
+\end_inset
+
+ - на верней грани 6 точек.
+\end_layout
+
+\begin_layout Standard
+\noindent
+На грани кости четное число: 
+\begin_inset Formula $\omega_{2}+\omega_{4}+\omega_{6}$
+\end_inset
+
+ 
+\begin_inset Formula $C=\left\{ \text{четное число на грани кубика}\right\} =\omega_{2}+\omega_{4}+\omega_{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P\left(A+B\right)=P\left(A\right)+P\left(B\right)$
+\end_inset
+
+, если события 
+\series bold
+несовместны,
+\series default
+ т.е.
+ 
+\begin_inset Formula $AB=\emptyset$
+\end_inset
+
+.
+ 
+\begin_inset Formula $0\le P\left(A\right)\le1$
+\end_inset
+
+.
+ Если же события совместны, то вероятность 
+\begin_inset Formula $P\left(A+B\right)=P\left(A\right)+P\left(B\right)-P\left(AB\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+События называются 
+\series bold
+независимыми
+\series default
+ если вероятность их произведения равна произведению вероятности: 
+\begin_inset Formula $P\left(AB\right)=P\left(A\right)P\left(B\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P\left(\sum_{k=1}^{n}A_{k}\right)=1-\prod_{k=1}^{n}\left(1-P\left(A_{k}\right)\right)$
+\end_inset
+
+ если события 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ независимы.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Случайная величина - 
+\series default
+это отображение
+\begin_inset Formula $\xi:\Omega\to{\cal {\cal R}}$
+\end_inset
+
+
+\series bold
+ 
+\series default
+или 
+\begin_inset Formula ${\cal Z}$
+\end_inset
+
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Для случайной величины при непрерывном отображении должна быть 
+\series bold
+измеримость
+\series default
+: 
+\begin_inset Formula $\left\{ \omega:\xi\left(\omega\right)\le x\right\} \in\mathcal{F}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\xi\left(\omega\right)\in(-\infty,x]$
+\end_inset
+
+.
+ Из элемента сигма-алгебры, мы попадаем в сигма-алгебру.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Вероятность 
+\begin_inset Formula $P\left(\omega:\xi\left(\omega\right)\le x\right)$
+\end_inset
+
+ - 
+\series bold
+функция распределения случайной величины.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Если 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+ - дифференцируема, то 
+\series bold
+плотность
+\series default
+.
+ 
+\begin_inset Formula $F'\left(x\right)=f\left(x\right)$
+\end_inset
+
+ - плотность.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Примеры:
+\end_layout
+
+\begin_layout Standard
+случайное время - непрерывная случайная величина, для которой функция распределе
+ния 
+\begin_inset Formula $\tau=F\left(t\right)=P\left(\tau\in t\right)=\begin{cases}
+1-e^{-\lambda t} & t\geq0\\
+0 & t<0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вероятность нахождения в состоянии 
+\begin_inset Formula $p_{k}=P\left\{ X=k\right\} =e^{-\lambda}\frac{\lambda^{k}}{k!}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Числовые характеристики случайных величин, производящие и характеристические
+ функции.
+\end_layout
+
+\begin_layout Standard
+Случайной величиной называется функция 
+\begin_inset Formula $\xi:\Omega\rightarrow{\cal R},$
+\end_inset
+
+измеримая относительно 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ и борелевской 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-алгебры на 
+\begin_inset Formula ${\cal R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Рассмотрим дискретную случайную величину 
+\begin_inset Formula $x_{1},x_{2},...,$
+\end_inset
+
+ с вероятностями 
+\begin_inset Formula $p_{1},p_{2},...,$
+\end_inset
+
+ тогда СВ 
+\begin_inset Formula $p_{k}=P\left\{ \xi\left(\omega\right)=k\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Математическое ожидание: 
+\series default
+
+\begin_inset Formula $EX=\sum_{k=1}^{n}x_{k}p_{k}=\sum X\left(\omega_{k}\right)P\left\{ X\left(\omega_{k}\right)=x_{k}\right\} $
+\end_inset
+
+ или 
+\begin_inset Formula $E\xi=\int_{\Omega}\xi\left(\omega\right)P\left(\left(d\omega\right)\right)=\int_{-\infty}^{+\infty}xf\left(x\right)dx=\int_{-\infty}^{+\infty}xdF\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Дисперсия
+\series default
+ 
+\begin_inset Formula $D\xi=E\left[\xi-E\xi\right]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+\begin_inset Formula $k$
+\end_inset
+
+-м начальным моментом 
+\series default
+случайной велчины 
+\begin_inset Formula $X$
+\end_inset
+
+, где 
+\begin_inset Formula $k\in{\cal N}$
+\end_inset
+
+, называется величина 
+\begin_inset Formula $v_{k}=E\left[X^{k}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+\begin_inset Formula $k$
+\end_inset
+
+-м центральным моментом
+\series default
+ случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ называется величина 
+\begin_inset Formula $\mu_{k}=E\left[\left(X-EX\right)^{k}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Производящая функция
+\series default
+ 
+\begin_inset Formula $\phi_{\xi}\left(z\right)=Ez^{\xi}=\sum z^{k}p_{k}$
+\end_inset
+
+ 
+\begin_inset Formula $\phi_{\xi}\left(z\right)=\int_{\Omega}z^{\xi\left(\omega\right)}P\left(d\omega\right)=\int_{-\infty}^{\infty}z^{\xi}f\left(x\right)dx$
+\end_inset
+
+.
+ Производящая функция позволяет вычислить МО 
+\begin_inset Formula $\phi'\left(z\right)|_{z=1}=E\xi$
+\end_inset
+
+ и Дисперсию 
+\begin_inset Formula $D\xi=\phi''_{\xi}\left(1\right)+\phi'_{\xi}\left(1\right)-\phi'_{\xi}\left(1\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Характеристическая функция 
+\series default
+
+\begin_inset Formula $\psi_{\xi}\left(u\right)=Ee^{iu\xi}=\int_{-\infty}^{\infty}e^{iux}f\left(x\right)dx$
+\end_inset
+
+ МО 
+\begin_inset Formula $\psi_{\xi}\left(u\right)=\sum_{k=0}^{\infty}e^{iuk}p_{k}$
+\end_inset
+
+
+\begin_inset Formula $\psi'\left(u\right)|_{u=0}=\int_{-\infty}^{\infty}ixe^{iux}f\left(x\right)dx|_{u=0}=i\int_{-\infty}^{\infty}xf\left(x\right)dx=iE\xi$
+\end_inset
+
+ ??? 
+\begin_inset Formula $=-iE\xi$
+\end_inset
+
+ дисперсия 
+\begin_inset Formula $D\xi=-\psi''\left(0\right)+\left(\psi'\left(0\right)\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Пример: Пуассоновское распределение.
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P\left(\xi=k\right)=e^{-\lambda}$
+\end_inset
+
+, тогда 
+\begin_inset Formula $\frac{\left(\lambda\right)^{k}}{k!}\phi_{\xi}\left(z\right)=\sum_{k=0}^{\infty}\frac{\lambda^{k}}{k!}e^{-\lambda}z^{k}=e^{-\lambda}\sum_{k=0}^{\infty}\frac{\left(\lambda z\right)^{k}}{k!}=e^{-\lambda}e^{\lambda z}=e^{\lambda\left(z-1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\frac{d\phi_{\xi}\left(z\right)}{dz}|_{z=1}=\frac{d}{dz}e^{\lambda\left(z-1\right)}|_{z=1}=\lambda e^{\lambda z-\lambda}|_{z=1}=\lambda=E\xi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Вторая производная 
+\begin_inset Formula $\frac{d^{2}\phi_{\xi}\left(z\right)}{dz^{2}}=\lambda^{2}e^{\lambda z-\lambda}$
+\end_inset
+
+, тогда 
+\begin_inset Formula $\phi''_{\xi}\left(1\right)+\phi'_{\xi}\left(1\right)-\phi'_{\xi}\left(1\right)^{2}=\lambda^{2}+\lambda-\lambda^{2}=\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Характеристическая функция 
+\begin_inset Formula $\psi_{\xi}\left(u\right)=\sum_{k=0}^{\infty}e^{iuk}e^{-\lambda}\frac{\left(\lambda\right)^{k}}{k!}=\sum_{k=0}^{\infty}e^{iuk-\lambda}\frac{\left(\lambda\right)^{k}}{k!}=e^{-\lambda}\sum_{k=0}^{\infty}\frac{\left(e^{iuk}\lambda\right)^{k}}{k!}=e^{-\lambda+e^{iu}\lambda}=e^{\lambda\left(e^{iu}-1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Процессы - пуассоновский, например.
+ 
+\begin_inset Formula $p_{k}\left(t\right)=P\left\{ X\left(t\right)=k\right\} =e^{-\lambda t}\frac{\left(\lambda t\right)^{k}}{k!}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Математическое ожидание, дисперсия, моменты, центральные моменты.
+\end_layout
+
+\begin_layout Standard
+Как только даем определения, нужно давать примеры.
+ Вычисляем мат.
+ ожидание и дисперсию для 
+\begin_inset Formula $\tau$
+\end_inset
+
+ и 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Part
+Экспоненциальный, гиперэкспоненциалный, эрланговский законы распределения
+ и их числовые характеристики.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Экспоненциальное: Функция распределения 
+\series default
+: 
+\begin_inset Formula $P\left(\xi\le t\right)=\left\{ \begin{array}{l}
+1-e^{-\lambda t},t\ge0\\
+0,t<0
+\end{array}\right.$
+\end_inset
+
+ , плотность 
+\begin_inset Formula $f\left(t\right)=\left\{ \begin{array}{l}
+\lambda e^{-\lambda t},t\ge0\\
+0,t<0
+\end{array}\right.$
+\end_inset
+
+ 
+\begin_inset Formula $E\xi=\frac{1}{\lambda}$
+\end_inset
+
+ 
+\begin_inset Formula $D\xi=\frac{1}{\lambda^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Плотность 
+\series bold
+гиперэкспоненциального
+\series default
+ распределения: 
+\begin_inset Formula $f_{\xi}\left(t\right)=\left\{ \begin{array}{l}
+\sum_{k=1}^{m}a_{k}\lambda_{k}e^{-\lambda_{k}t},t\ge0\\
+0,t<0
+\end{array}\right.$
+\end_inset
+
+, где 
+\begin_inset Formula $\alpha_{i}\lambda_{i}\ge0,i=1...m$
+\end_inset
+
+ 
+\begin_inset Formula $E\xi=\sum_{l=1}^{m}\frac{a_{l}}{\lambda_{l}}D\xi=2\sum_{l=1}^{m}\frac{\alpha_{l}}{\lambda_{l}^{2}}-\left(\sum_{l=1}^{m}\frac{\alpha_{l}}{\lambda_{l}}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Эрланговский закон распределения
+\series default
+ 
+\begin_inset Formula $f\left(x\right)=\frac{\lambda^{k}x^{k-1}}{\left(k-1\right)!}e^{-\lambda x},E\xi=\frac{k}{\lambda},D\xi=\frac{k}{\lambda^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Преобразования Лапласа для распределений из вопроса 3.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Пусть 
+\begin_inset Formula $f\left(t\right)$
+\end_inset
+
+ - ограниченная функция или функция, растущая не быстрее чем 
+\begin_inset Formula $e^{\lambda t}$
+\end_inset
+
+ при некотором 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left(Lf\right)=\int_{0}^{\infty}e^{-\lambda\tau}f\left(\tau\right)d\tau$
+\end_inset
+
+ - преобразование Лапласа функции 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Свойства
+\series default
+ преобразования Лапласа
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L\left(af+bg\right)\lambda=aLf\lambda+bLg\lambda$
+\end_inset
+
+, где 
+\begin_inset Formula $a,b$
+\end_inset
+
+ - вещественные числа, а 
+\begin_inset Formula $f,g$
+\end_inset
+
+ - функции для которых определено преобразование Лапласа.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int_{0}^{\infty}e^{-\lambda\tau}\cdot e^{\mu\tau}d\tau=\frac{1}{\mu-\lambda}e^{\left(\mu-\lambda\right)\tau}|_{0}^{\infty}=\frac{1}{\mu-\lambda}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Преобразование Лапласа от 
+\begin_inset Formula $\frac{d}{dt}f\left(t\right)=sF\left(s\right)-f\left(0\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Примеры преобразований Лапласа:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(t\right)=1\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\widehat{1}=\int_{0}^{\infty}e^{-st}dt=-\frac{1}{s}e^{-st}\cdot|_{0}^{\infty}=\frac{1}{s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(t\right)=t\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\widehat{f}\left(t\right)=\int_{0}^{\infty}te^{-st}dt=\left|\begin{array}{cc}
+u=t & dv=e^{-st}dt\\
+du=dt & v=-\frac{1}{s}e^{-st}
+\end{array}\right|=\frac{1}{s}\int_{0}^{\infty}e^{-st}dtr=\frac{1}{s^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(t\right)=e^{-\lambda t}\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\widehat{f}\left(t\right)=\int_{0}^{\infty}e^{-st}e^{-\lambda t}dt=\int_{0}^{\infty}e^{-\left(s+\lambda\right)t}dt=\frac{1}{\lambda+s}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Для тригонометрии нужно использовать формулы Эйлера.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $z=\cos\alpha+i\sin\alpha z=e^{i\alpha}\bar{z}=e^{-i\alpha}=\cos\alpha-i\sin\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\cos\alpha=\frac{e^{i\alpha}+e^{-i\alpha}}{2}\sin\alpha=\frac{e^{i\alpha}-e^{-i\alpha}}{2i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(t\right)=\sin\left(\alpha t\right)\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\widehat{f}\left(t\right)=\int_{0}^{\infty}e^{-st}\sin\alpha\tau dt=\int_{0}^{\infty}e^{-st}\frac{e^{i\alpha t}-e^{-i\alpha t}}{2i}dt=$
+\end_inset
+
+
+\begin_inset Formula $\left[\frac{1}{s-i\alpha}-\frac{1}{s+i\alpha}\right]\frac{1}{2i}=\frac{s+i\alpha-s+i\alpha}{\left(s^{2}+\alpha^{2}\right)2i}=\frac{i\alpha+i\alpha}{\left(s^{2}+\alpha^{2}\right)2i}=\frac{\alpha}{s^{2}+\alpha^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(t\right)=\cos\left(\alpha t\right)\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{s}{s^{2}+\alpha^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(t\right)=\phi'\left(t\right)\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\widehat{f}\left(t\right)=\int_{0}^{\infty}e^{-st}\frac{d}{dt}\phi\left(t\right)dt$
+\end_inset
+
+
+\begin_inset Formula $\left|\begin{array}{l}
+{u=e^{-st}\,\,dv=\phi'\left(t\right)dt}\\
+{u=-se^{-st}\,\,\,v=\phi\left(t\right)}
+\end{array}\right|=-\phi\left(0\right)+s\int_{0}^{\infty}e^{-st}\phi\left(t\right)dt=-\phi\left(0\right)+s\widehat{\phi}\left(t\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Экспоненциальное распределение: 
+\begin_inset Formula $\widehat{f}\left(s\right)=\frac{\lambda}{\lambda+s}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Гиперэкспоненциальное распределение: 
+\begin_inset Formula $\widehat{f}\left(s\right)=\sum_{i=1}^{n}\alpha_{i}\frac{\lambda_{i}}{\lambda_{i}+s}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Эрланговское распределение: 
+\begin_inset Formula $\widehat{f}\left(s\right)=\left(\frac{\lambda}{\lambda+s}\right)^{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO (на будущее) подробно расписать их
+\end_layout
+
+\begin_layout Part
+Пуассоновский процесс и его свойства
+\end_layout
+
+\begin_layout Standard
+\noindent
+Целочисленный пуассоновский точечный процесс 
+\begin_inset Formula $N\left(t\right),0\leq t<+\infty$
+\end_inset
+
+ определяется тремя свойствами:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Ординарность
+\series default
+ - вероятность наступления более одного события на любом малом интервале
+ времени 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ имеет более высокий порядок малости, чем 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+.
+ Поэтому для него выполняются соотношения 
+\begin_inset Formula $P\left\{ N\left(t+\Delta t\right)-N\left(t\right)=1\right\} =P\left\{ N\left(\Delta t\right)=1\right\} =v\Delta t+o\left(\Delta t\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $P\left\{ N\left(t+\Delta t\right)-N\left(t\right)>1\right\} =P\left\{ N\left(\Delta t\right)>1\right\} =o\left(\Delta t\right)$
+\end_inset
+
+, 
+\begin_inset Formula $v$
+\end_inset
+
+ - некоторая положительная величина, имеющая размерность, обратную времени.
+ Следствием этих двух соотношений является равенство 
+\begin_inset Formula $P\left\{ N\left(t+\Delta t\right)-N\left(t\right)=0\right\} =P\left\{ N\left(\Delta t\right)=0\right\} =1-v\Delta t+o\left(\Delta t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Стационарность
+\series default
+ - его статитсические характеристики не изменяются при сдвиге всех точек
+ вдоль оси времени на произвольную 
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Независимость 
+\series default
+(отсутствие последействия) во все моменты времени (периоды) - имеет независимые
+ приращения (значения) на неперекрывающихся интервалах времени.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p\left(x\left(t\right)=k\right)=e^{-\lambda t}\frac{\left(\lambda t\right)^{k}}{k!}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\noindent
+МО 
+\begin_inset Formula $E\,\xi\left(t\right)=\lambda t$
+\end_inset
+
+, Дисперсия 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $D\left(\xi\left(t\right)\right)=\lambda t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+ХФ 
+\begin_inset Formula $\phi_{N}\left(z\right)=\sum_{k=0}^{\infty}z^{k}e^{-\lambda t}\frac{\left(\lambda t\right)^{k}}{k!}=e^{-\lambda t}\sum_{k=0}^{\infty}\frac{\left(z\lambda t\right)^{k}}{k!}=e^{-\lambda t}e^{z\lambda t}=e^{-\lambda t\left(1-z\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Марковские процессы, определения и свойства.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим 
+\begin_inset Formula $X_{t},t=1,2,...$
+\end_inset
+
+ - индексированное семейство СВ.
+ Введем обозначения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(X_{k}=j|x_{k-1}=i\right)=p_{ij}^{\left(1\right)}$
+\end_inset
+
+за 1 шаг.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(X_{k}=j|X_{k-1}=i,X_{k-2}=i_{k-2},...,X_{0}=i_{0}\right)=p_{ij}^{\left(k\right)}$
+\end_inset
+
+- за 
+\begin_inset Formula $k$
+\end_inset
+
+ шагов.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Марковость
+\series default
+: 
+\begin_inset Formula $P\left(X_{k}=j|X_{0}=i_{0},...,X_{k-1}=i\right)=P\left(X_{k}=j|X_{k-1}=i\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Уравнение Чепмена-Колмогорова для данного случая:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{ij}^{\left(2\right)}=\sum_{k=0}^{n}p_{ik}p_{kj}$
+\end_inset
+
+, за 
+\begin_inset Formula $l$
+\end_inset
+
+ шагов 
+\begin_inset Formula $p_{ij}^{\left(l\right)}=\sum p_{ki}^{\left(l-m\right)}p_{kj}^{m}$
+\end_inset
+
+, нужно учесть размерности, как в матричном умножении.
+\end_layout
+
+\begin_layout Standard
+Старое
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Общее определение: 
+\series default
+рассмотрим случайный процесс
+\series bold
+ 
+\series default
+
+\begin_inset Formula $\xi\left(t\right)$
+\end_inset
+
+
+\series bold
+.
+ Марковский случайный процесс
+\series default
+ должен удовлетворять соотношению 
+\begin_inset Formula $E\left[\xi\left(T\right)|{\cal F}_{t}\right]=E\left[\xi\left(T\right)|\xi\left(t\right)\right]$
+\end_inset
+
+, 
+\begin_inset Formula $T\ge t$
+\end_inset
+
+, где 
+\begin_inset Formula $\mathcal{F}_{t}=\left\{ \omega:\text{порожденные всеми }\xi\left(s\right),0\le s\le t\right\} $
+\end_inset
+
+ - вся история процесса, которую мы знаем.
+ ??? 
+\begin_inset Formula $E\left[f\left(\xi\left(T\right)\right)|\mathcal{F}_{t}\right]=E\left[f\left(\xi\left(T\right)\right)|\xi\left(t\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Мы можем говорить о дискретном и непрерывном времени , а также о дискретном
+ и непрерывном состоянии (пространство состояний может быть непрерывным).
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\xi:\Omega\to V=\left\{ x_{0},x_{1},...,x_{n},...\right\} $
+\end_inset
+
+ - 
+\series bold
+множество значений
+\series default
+ или 
+\series bold
+множество состояний
+\series default
+ 
+\series bold
+марковской цепи.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\xi_{k}:\Omega\to V$
+\end_inset
+
+ 
+\begin_inset Formula $k=1,...,M$
+\end_inset
+
+ - дискретный случай
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\xi_{t}:\Omega\to V$
+\end_inset
+
+ 
+\begin_inset Formula $t\in\left[0,T\right]$
+\end_inset
+
+ - непрерывный случай
+\end_layout
+
+\begin_layout Part
+Переходные вероятности, уравнение Чепмена-Колмогорова ???
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p\left(t,x,T,B\right)=P\left\{ \xi\left(T\right)\in B|\xi\left(t\right)=x\right\} $
+\end_inset
+
+ - 
+\series bold
+переходная плотность
+\series default
+, 
+\begin_inset Formula $P\left(s,x,T,B\right)=\int_{B}p\left(t,x,T,y\right)dy$
+\end_inset
+
+
+\series bold
+ 
+\series default
+- 
+\series bold
+переходная вероятность
+\series default
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ - борелевская сигма-алгебра 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Борелевская сигма-алгебра - минимальная сигма-алгебра, содержащая все открытые
+ (каждая точка входит вместе с некоторой окрестностью) подмножества топологическ
+ого пространства (также она содержит и все замкнутые, эти подмножества также
+ называются Борелевыми).
+ Борелевская сигма-алгебра обычно выступает в роли сигма-алгебры случайных
+ событий вероятностного пространства.
+ В борелевской сигма-алгебре на прямой или на отрезке содержатся многие
+ «простые» множества: все интервалы, полуинтервалы, отрезки и их счётные
+ объединения.
+ Борелевской сигма-алгеброй в 
+\begin_inset Formula ${\cal R}$
+\end_inset
+
+ называется самая маленькая среди всех возможных 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-алгебр, содержащих любые интервалы на прямой.
+ Если не оговорено иное, в качестве топологического пространства выступает
+ множество вещественных чисел.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Уравнение 
+\series bold
+Чепмена-Колмогорова
+\series default
+: 
+\begin_inset Formula $p\left(t,x,T,y\right)=\int_{-\infty}^{\infty}p\left(t,x,t,z\right)p\left(t,z,T,y\right)dz$
+\end_inset
+
+ в общем случае ???
+\end_layout
+
+\begin_layout Standard
+\noindent
+??? В конспекте была другая формула: 
+\begin_inset Formula $P\left(s,x,t,A\right)=\int_{{\rm R}}p\left(s,x,\theta,dz\right)P\left(\theta,z,t,A\right)$
+\end_inset
+
+ или 
+\begin_inset Formula $p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\theta,z\right)p\left(\theta,z,t,y\right)dz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p\left(s,x,T,B\right)=P\left\{ \xi\left(T\right)\in B|\xi\left(s\right)=x\right\} $
+\end_inset
+
+ - 
+\series bold
+переходная плотность
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P\left(s,x,T,B\right)=\int_{B}p\left(s,x,T,y\right)dy$
+\end_inset
+
+ - 
+\series bold
+переходная вероятность 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Уравнение 
+\series bold
+Чепмена-Колмогорова
+\series default
+: 
+\begin_inset Formula $p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)p\left(\vartheta,z,t,y\right)dz$
+\end_inset
+
+ в общем случае
+\end_layout
+
+\begin_layout Standard
+\noindent
+??? В конспекте была другая формула: 
+\begin_inset Formula $P\left(s,x,t,A\right)=\int_{{\rm R}}p\left(s,x,\theta,dz\right)P\left(\theta,z,t,A\right)$
+\end_inset
+
+ или 
+\begin_inset Formula $p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\theta,z\right)p\left(\theta,z,t,y\right)dz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+??? что такое 
+\begin_inset Formula $s,x,t,y,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Марковские цепи с дискретным временем, способы их описания (матрицы, графы)
+\end_layout
+
+\begin_layout Standard
+\noindent
+Пусть 
+\begin_inset Formula $V=\left\{ x_{1},...,x_{n}\right\} $
+\end_inset
+
+, тогда 
+\begin_inset Formula $p_{k}\left(t\right)=P\left(\nu\left(t\right)=k\right)$
+\end_inset
+
+, где 
+\begin_inset Formula $\nu$
+\end_inset
+
+ - состояния 
+\begin_inset Formula $p_{ij}\left(t\right)=P\left\{ \nu\left(t\right)=j|\nu\left(0\right)=i\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $p_{ij}=P\left(\nu\left(k+1\right)=j|\nu\left(k\right)=i\right)$
+\end_inset
+
+.
+ Нужно определить марковскую цепь.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Марковская цепь с дискретным временем
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $E\left[\xi\left(T\right)|\mathcal{F}_{t}\right]=E\left(\xi\left(T\right)|\xi\left(t\right)\right)$
+\end_inset
+
+ в данном случае 
+\begin_inset Formula $E\left[\nu^{\left(k\right)}|\nu\left(0\right),\nu\left(1\right),...,\nu\left(k-1\right)\right]=E\left[\nu^{\left(k\right)}|\mathcal{F}_{k-1}\right]=E\left[\nu^{\left(k\right)}|\nu\left(k-1\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P\left(s,x,y,B\right)=\int p\left(s,x,\theta,dz\right)p\left(\theta,z,t,B\right)$
+\end_inset
+
+ - уравнение Чепмена-Колмогорова для марковской цепи с дискретным временем.
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $p_{kj}^{\left(m\right)}=\sum_{i=1}^{n}p_{ki}^{\left(m-1\right)}p_{ij}^{1}=\sum_{i=1}^{n}p_{ki}^{\left(m-l\right)}p_{ij}^{\left(l\right)}$
+\end_inset
+
+, 
+\begin_inset Formula $m=1,2,3,...$
+\end_inset
+
+??? Ко всему этому вопросы, см.
+ предыдущий вопрос.
+\end_layout
+
+\begin_layout Standard
+\noindent
+В матричном виде уравнение Чепмена-Колмогорова имеет вид 
+\begin_inset Formula ${\rm P}^{m}={\rm P}^{m-1}{\rm P}$
+\end_inset
+
+ или 
+\begin_inset Formula ${\rm P}^{m}={\rm P}^{m-l}{\rm P}^{l}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Также можно представить марковскую цепь в виде направленного графа, где
+ вершины - состояния из 
+\begin_inset Formula $V$
+\end_inset
+
+, а вес ребра, соединяющего состояние 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ и 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ равен 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Чтобы задать марковскую цепь с дискретным временем, достаточно задать ее
+ начальное состояние 
+\begin_inset Formula $\nu=\left(\nu_{1},...\nu_{n}\right)$
+\end_inset
+
+ (если цепь имеет 
+\begin_inset Formula $n$
+\end_inset
+
+ последовательных состояний) и переходную вероятность 
+\begin_inset Formula $p_{ik}^{\left(1\right)}$
+\end_inset
+
+ за один шаг.
+ При этом, состояние марковской цепи за 
+\begin_inset Formula $m$
+\end_inset
+
+ шагов задается соотношением 
+\begin_inset Formula $p^{\left(m\right)}=\nu{\rm P}^{m}$
+\end_inset
+
+ или 
+\begin_inset Formula $p_{j}^{\left(m\right)}=\sum_{i=1}^{n}\sum_{k=1}^{n}\nu_{i}p_{ik}\cdot p_{kj}^{\left(m-1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Состояние марковской цепи можно разбить на 
+\series bold
+классы
+\end_layout
+
+\begin_layout Standard
+\noindent
+Если состояние 
+\begin_inset Formula $i$
+\end_inset
+
+ и 
+\begin_inset Formula $j$
+\end_inset
+
+ таковы, что 
+\begin_inset Formula $p_{ij}>0$
+\end_inset
+
+, 
+\begin_inset Formula $p_{ji}>0$
+\end_inset
+
+, то эти состояния называются 
+\series bold
+сообщающимися
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Если состояния 
+\begin_inset Formula $i$
+\end_inset
+
+ и 
+\begin_inset Formula $j$
+\end_inset
+
+ таковы, что 
+\begin_inset Formula $p_{ij}^{\left(n\right)}>0$
+\end_inset
+
+, 
+\begin_inset Formula $p_{ji}^{\left(n\right)}>0$
+\end_inset
+
+, то эти состояния называются 
+\series bold
+сообщающимися при некотором n
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Будем называть класс 
+\begin_inset Formula $C$
+\end_inset
+
+ такой, что для всех 
+\begin_inset Formula $i,j\in C$
+\end_inset
+
+ состояния i и j – сообщающиеся –
+\series bold
+ классом сообщающихся состояний.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Класс называется 
+\series bold
+замкнутым
+\series default
+, если для 
+\begin_inset Formula $\forall i\in C$
+\end_inset
+
+ и класса 
+\begin_inset Formula $I$
+\end_inset
+
+, для элемента 
+\begin_inset Formula $j\in I$
+\end_inset
+
+.???
+\series bold
+ 
+\series default
+Замкнутый класс состояний - это класс, из которого 
+\series bold
+нельзя выйти
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Из того, что 
+\begin_inset Formula $p_{ij}^{\left(n-1\right)}>0$
+\end_inset
+
+ следует, что 
+\begin_inset Formula $j\in C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Утверждение: 
+\series default
+цепь Маркова с конечным числом состояний имеет хотя бы один замкнутый сообщающий
+ся класс.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Состояние из незамкнутого класса, называется 
+\series bold
+несущественным
+\series default
+ состоянием.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Состояние i называется 
+\series bold
+поглощающим
+\series default
+, если 
+\begin_inset Formula $p_{ii}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Цепь Маркова называется 
+\series bold
+неприводимой
+\series default
+, если все ее состояния попадают в один замкнутый класс.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Состояние i из некоторого подкласса 
+\begin_inset Formula $i\in I$
+\end_inset
+
+ называется 
+\series bold
+возвратным
+\series default
+, если событие 
+\begin_inset Formula $P_{i}\left\{ \xi_{n}=i\text{ для бесконечно многих }n\right\} =1$
+\end_inset
+
+ и 
+\series bold
+невозвратным
+\series default
+, если событие 
+\begin_inset Formula $p_{i}\left\{ \xi_{n}=i\text{ для бесконечно многих }n\right\} =0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Теорема: 
+\series default
+состояние 
+\begin_inset Formula $i$
+\end_inset
+
+ является возвратным, если величина 
+\begin_inset Formula $f_{i}=P_{i}\left(X_{n}=i,\forall_{n}\right)=1$
+\end_inset
+
+ и невозвратно, если 
+\begin_inset Formula $f_{i}<1$
+\end_inset
+
+ ??? не наоборот
+\end_layout
+
+\begin_layout Standard
+\noindent
+Множество состояний марковской цепи можно рассматривать как множество узлов
+ некоторого графа.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Матрица 
+\begin_inset Formula ${\rm P}$
+\end_inset
+
+ называется также 
+\series bold
+стохастической матрицей (переходная вероятность)
+\series default
+, т.к.
+ она обладает свойством: 
+\begin_inset Formula $\sum_{j=1}^{n}p_{kj}=1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Part
+Марковские цепи с непрерывным временем, генератор марковской цепи и его
+ свойства.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Марковское свойство для цепи с непрерывным временем можно описать с помощью
+ уравнения Чепмена-Колмогорова.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p_{ij}\left(t\right)=\sum_{k}p_{ik}\left(t-s\right)p_{kj}\left(s\right)$
+\end_inset
+
+ или 
+\begin_inset Formula $p_{ij}\left(t\right)=\sum_{k=1}^{n}p_{ik}\left(s\right)p_{kj}\left(t-s\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Нужно задать поведение переходной вероятности на малых интервалах времени.
+ В качестве примера марковской цепи с непрерывным временем рассмотрим пуассоновс
+кий процесс.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Пусть 
+\begin_inset Formula $p_{k}\left(t\right)=P\left(N\left(t\right)=k\right)$
+\end_inset
+
+, при этом 
+\begin_inset Formula $\sum_{k=0}^{\infty}p_{k}\left(t\right)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Кроме того приращения процесса 
+\begin_inset Formula $N\left(H\right)$
+\end_inset
+
+ ??? (видимо, опечатка) на пересечении интервалов независимы, т.е.
+ 
+\begin_inset Formula $N\left(t+\Delta t\right)-N\left(t\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $N\left(s+\Delta S\right)-N\left(s\right)$
+\end_inset
+
+ - независимые случайные величины.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename p1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Траектория процесса 
+\begin_inset Formula $N\left(t\right)$
+\end_inset
+
+ имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename вставлено1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+При этом 
+\begin_inset Formula $P\left(N\left(t\right)=0\right)=e^{-\lambda t}$
+\end_inset
+
+, 
+\begin_inset Formula $P\left(N\left(t\right)=1\right)=e^{-\lambda t}\lambda t$
+\end_inset
+
+ если 
+\begin_inset Formula $t$
+\end_inset
+
+ мало, то 
+\begin_inset Formula $P\left(N\left(t\right)\ge2\right)=o\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Граф, соответствующий пуассоновскому процессу имеет вид (???была картинка)
+ и матрица 
+\begin_inset Formula $Q$
+\end_inset
+
+ имеет вид 
+\begin_inset Formula 
+\begin{multline*}
+Q=\left(\begin{array}{ccccc}
+-\lambda & \lambda & 0 & 0 & 0\\
+0 & -\lambda & \lambda & 0 & 0\\
+0 & 0 & -\lambda & \lambda & 0\\
+... & ... & ... & ... & ...
+\end{array}\right)
+\end{multline*}
+
+\end_inset
+
+Опишем поведение приращения пуассоновского процесса на малых временах.
+ 
+\begin_inset Formula 
+\[
+P\left(N\left(t+\Delta t\right)-N\left(t\right)\right)=e^{-\lambda\Delta t}\frac{\left(\lambda\Delta t\right)^{k}}{k!}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P\left(N\left(t+\Delta t\right)-N\left(t\right)=0\right)=e^{-\lambda\Delta t}=1-\lambda\Delta t+o\left(\left|\Delta t\right|\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P\left(N\left(t+\Delta t\right)-N\left(t\right)=1\right)=e^{-\lambda\Delta t}\lambda\Delta t
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P\left(N\left(t+\Delta t\right)-N\left(t\right)\ge2\right)=o\left(\Delta t\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P_{ik}\left(t+\Delta t\right)=P\left(N\left(t+\Delta t\right)=k|N\left(t\right)=i\right)
+\]
+
+\end_inset
+
+Вычислим 
+\begin_inset Formula 
+\[
+P_{ik}\left(t+\Delta t\right)-P_{ik}\left(t\right)=\left\{ \begin{array}{l}
+\lambda\Delta t+o\left(\Delta t\right),\text{ если }k=i+1\\
+o\left(\Delta t\right),\text{если }k\ge2
+\end{array}\right.
+\]
+
+\end_inset
+
+Вычислим 
+\begin_inset Formula $\lim\limits _{\Delta t\to0}\frac{p_{ik}\left(t+\Delta t\right)-p_{ik}\left(t\right)}{\Delta t}=\lim\limits _{\Delta t\to0}\frac{1}{\Delta t}\left[\begin{array}{l}
+\lambda\Delta t+o\left(\Delta t\right)\\
+p_{i}\left(t\right)=\sum p_{ki}\left(t\right)p_{k}\left(t\right)
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Таким образом, соответствующее уравнение 
+\begin_inset Formula $p_{i}\left(t\right)$
+\end_inset
+
+ будет иметь вид 
+\begin_inset Formula $\frac{dp_{i}\left(t\right)}{dt}=\lambda p_{i}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Прямые и обратные уравнения Колмогорова для марковской цепи.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Марковские цепи с дискретным временем.
+ 
+\begin_inset Formula 
+\[
+\begin{array}{l}
+P\left(\xi^{\left(1\right)}=j|\xi=i\right)=p_{ij}\\
+P\left(\xi^{\left(2\right)}=k|\xi^{\left(0\right)}=i,\xi^{\left(1\right)}=j\right)=p\cdot P\left(\xi^{2}=k|\xi^{\left(1\right)}=j\right)=p_{ji}^{2}\\
+p_{ik}^{2}=\sum_{j=1}^{n}p_{jk}p_{ij}
+\end{array}
+\]
+
+\end_inset
+
+??? правильно ли поставлены индексы
+\begin_inset Formula 
+\[
+Q=\left(q_{ik}\right)_{i,k=1}^{n}\sum_{k}q_{ik}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{k\ne i}q_{ik}>0,i\ne k,q_{ik}\ge0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P\left(t\right)=e^{tQ}=I+IQ+\frac{t^{2}Q^{2}}{2!}+...+\frac{t^{n}Q^{n}}{n!}+...
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|Q\right|=\max\left|q_{ik}\right|
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|Q\right|^{2}=\sum_{i,k}^{}q_{ik}q_{kj}=QQ^{T}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|P\left(t\right)\right|\le1+tk+\frac{t^{2}k^{2}}{2!}=e^{tk}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P\left(t\right)=\lim\limits _{\Delta t\to0}\frac{P\left(t+\Delta t\right)-P\left(t\right)}{\Delta t}=Qe^{tQ}=QP\left(t\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\frac{dP\left(t\right)}{dt}=P\left(t\right)Q$
+\end_inset
+
+ - 
+\series bold
+прямое уравнение Колмогорова, 
+\series default
+
+\begin_inset Formula $P\left(0\right)=I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\frac{dP\left(t\right)}{dt}=Qp\left(t\right)$
+\end_inset
+
+ - 
+\series bold
+Обратное уравнение Колмогорова 
+\end_layout
+
+\begin_layout Part
+Процессы рождения и гибели
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Процессы рождения и гибели
+\end_layout
+
+\begin_layout Standard
+\noindent
+Рассмотрим 
+\begin_inset Formula $Q$
+\end_inset
+
+ - матрицу вида 
+\begin_inset Formula 
+\[
+Q=\left(\begin{array}{cccc}
+-\lambda & \lambda & 0 & ...\\
+0 & -\lambda & \lambda & ...\\
+... & ... & ... & ...\\
+0 & 0 & 0 & 0
+\end{array}\right)
+\]
+
+\end_inset
+
+И вычислим 
+\begin_inset Formula $P\left(t\right)=e^{tQ}$
+\end_inset
+
+ здесь 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Матрица 
+\begin_inset Formula $P\left(t\right)$
+\end_inset
+
+ будет верхние угол матрицы ??? вида 
+\begin_inset Formula $P\left(t\right)=\left(\begin{array}{cccc}
+p_{11}t & p_{12} & ... & p_{1n}\\
+... & p_{22} & ... & p_{2n}\\
+... & ... & ... & ...\\
+0 & 0 & 0 & 0
+\end{array}\right)\left(Q\text{матричное умножение}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Для вычисления матрицы 
+\begin_inset Formula $P\left(t\right)$
+\end_inset
+
+ воспользуемся уравнениями 
+\begin_inset Formula $\frac{dp}{dt}=P\left(t\right)Q$
+\end_inset
+
+ - прямое уравнение
+\end_layout
+
+\begin_layout Standard
+\noindent
+При этом для элементов 
+\begin_inset Formula $p_{ij}\left(t\right)$
+\end_inset
+
+ матрицы 
+\begin_inset Formula $P\left(t\right)$
+\end_inset
+
+ получим следующее уравнение 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\begin{array}{c}
+\frac{dp_{11}}{dt}=-\lambda p_{11}\left(t\right),p_{11}\left(0\right)=1\\
+...\\
+\frac{dp_{ij}\left(t\right)}{dt}=-\lambda p_{i,i+1}\left(t\right)+\lambda p_{ii}\left(t\right),p_{i,i}\left(0\right)=0
+\end{array}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Таким образом, задача нахождения элементов матрицы 
+\begin_inset Formula $P\left(t\right)=e^{tQ}$
+\end_inset
+
+ сводится к решению следующих систем ОДУ 
+\begin_inset Formula 
+\[
+\frac{dp_{ii}\left(t\right)}{dt}=-\lambda p_{ij}\left(t\right),i=0,1,...,N-1,p_{ij}\left(0\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Системы массового обслуживания и их классификация
+\end_layout
+
+\begin_layout Standard
+\noindent
+СМО 
+\series bold
+Системы массового обслуживания
+\series default
+ – совокупность, включающая:
+\end_layout
+
+\begin_layout Enumerate
+Входящий поток
+\end_layout
+
+\begin_layout Enumerate
+Обслуживающее устройство
+\end_layout
+
+\begin_layout Enumerate
+Выходящий поток 
+\end_layout
+
+\begin_layout Standard
+\noindent
+СМО могут быть 
+\series bold
+одноканальными
+\series default
+ и 
+\series bold
+многоканальными
+\series default
+ в зависимости от того, сколько обслуживающих устройств в внашей системе.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Входящий поток 
+\series default
+– поток, поступающих заявок – это случайный процесс с дискретным множеством
+ состояний.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Опишем классификацию СМО: 
+\series bold
+классификация Кендалла
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Пример: 
+\begin_inset Formula $M|N|n|r$
+\end_inset
+
+.
+ Это означает, что входящий поток - марковский, время обслуживания – экспоненциа
+льное, 
+\begin_inset Formula $n$
+\end_inset
+
+ - число обслуживаемых устройств, 
+\begin_inset Formula $r$
+\end_inset
+
+ - длина очереди.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Входящий поток
+\end_layout
+
+\begin_layout Standard
+\noindent
+Обозначим 
+\begin_inset Formula $\partial\left(t\right)$
+\end_inset
+
+ - число заявок поступивших в систему за время 
+\begin_inset Formula $t$
+\end_inset
+
+, пусть 
+\begin_inset Formula $\left\{ \tau_{k}\right\} $
+\end_inset
+
+ моменты прихода заявок.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Для того, чтобы описать входящий поток, введем в рассмотрение случайную
+ величину 
+\begin_inset Formula $\xi_{i}=\tau_{i}-\tau_{i-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+И пусть 
+\begin_inset Formula $F_{\xi_{1},...,\xi_{n}}\left(x_{1},...,x_{k}\right)=P\left\{ \xi\le x_{1},...,\xi_{n}\le x_{n}\right\} $
+\end_inset
+
+ /
+\end_layout
+
+\begin_layout Standard
+\noindent
+Наряду с этим рассмотрим набор интервалов 
+\begin_inset Formula $[\partial,t_{1}),[t_{1},t_{2}),...,\left(t_{k-1},t_{k}\right)$
+\end_inset
+
+ и обозначим 
+\begin_inset Formula $\partial_{k}$
+\end_inset
+
+ - число заявок, поступающих за время 
+\begin_inset Formula $\xi_{k}$
+\end_inset
+
+, т.е.
+ на интервале 
+\begin_inset Formula $[t_{k-1},t_{k})$
+\end_inset
+
+ и пусть 
+\begin_inset Formula $G/\mu_{1}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+…
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $M_{k},t_{1},...,t_{n}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+P\left(\partial_{1}=m_{1},...,\partial_{k}=m_{k}\right)
+\]
+
+\end_inset
+
+Свойства входящего потока
+\end_layout
+
+\begin_layout Enumerate
+Отсутствуют последствия
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Стационарность
+\series default
+, т.е.
+ число заявок за интервал 
+\begin_inset Formula $\left[\tau,t_{1}+\tau\right]$
+\end_inset
+
+ совпадает с числом заявок на интервале 
+\begin_inset Formula $\left[0,t_{1}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Ординарность
+\series default
+, 
+\begin_inset Formula $P\left(\partial\left(\Delta t\right)>1\right)=o\left(\Delta t\right)$
+\end_inset
+
+ т.е.
+ заявки поступают по одной.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename вставлено2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Одноканальные и многоканальные СМО с отказами
+\end_layout
+
+\begin_layout Part
+Система M|M|1|
+\begin_inset Formula $\infty$
+\end_inset
+
+ ОДУ для распределений
+\end_layout
+
+\begin_layout Enumerate
+Марковский входящий поток
+\end_layout
+
+\begin_layout Enumerate
+Экспоненциальное время обслуживания
+\end_layout
+
+\begin_layout Enumerate
+1 обслуживающее устройство – одноканальная система
+\end_layout
+
+\begin_layout Enumerate
+Очередь бесконечна 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Когда очередь бесконечна, говорят, что это – 
+\series bold
+система без потерь
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+1.
+ – число заявок в системе в момент 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Это случайный процесс, принимающий значения из множества 
+\begin_inset Formula $V=\left\{ 0,1,2,...,\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Обозначим 
+\begin_inset Formula $p_{ij}\left(\Delta\right)$
+\end_inset
+
+ - вероятность перехода из состояния 
+\begin_inset Formula $i$
+\end_inset
+
+ в состояние 
+\begin_inset Formula $j$
+\end_inset
+
+ за время 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ (
+\begin_inset Formula $\Delta t$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\noindent
+По предположению, за время 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ с вероятностью 
+\begin_inset Formula $1-\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+ не поступит ни одной заявки, а если 
+\begin_inset Formula $\nu\left(t\right)>0$
+\end_inset
+
+, то с вероятностью 
+\begin_inset Formula $1-\mu\Delta+o\left(\Delta\right)$
+\end_inset
+
+ ни одна заявка не будет обслужена.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Одна заявка может быть обслужена – тогда число заявок -1.
+ Может прийти заявка, тогда +1.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p_{00}\left(\Delta\right)$
+\end_inset
+
+ - вероятность того, что за время 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ из 0 никто не пришел 
+\begin_inset Formula $=1-\lambda\Delta+o\left(\Delta\right),i,j=0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p_{i,i+1}=\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+
+\begin_inset Formula $p_{i,i-1}\left(\Delta\right)=\mu\Delta+o\left(\Delta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Другими словами 
+\begin_inset Formula $\nu\left(t\right)$
+\end_inset
+
+ - это процесс рождения-гибели (ПРГ).
+\end_layout
+
+\begin_layout Standard
+\noindent
+Пусть 
+\begin_inset Formula $p_{i}\left(t\right)=p\left(\nu\left(t\right)=i\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p_{0}\left(t+\Delta\right)=\left(1-\lambda\Delta\right)p_{0}\left(t\right)+\mu p_{1}\left(t\right)\Delta+o\left(\Delta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p_{i}\left(t+\Delta t\right)=\left(1-\left(\lambda+\mu\right)\Delta\right)p_{i}\left(t\right)+\lambda\Delta p_{i-1}\left(t\right)+\mu\Delta p_{i+1}\left(t\right)+o\left(\Delta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\frac{p_{i}\left(t+\Delta\right)-p_{i}\left(t\right)}{\Delta}=-\left(\lambda+\mu\right)p_{i}\left(t\right)+\lambda p_{i-1}\left(t\right)+\mu p_{i+1}\left(t\right)+O\left(\Delta\right)$
+\end_inset
+
+ теперь 
+\begin_inset Formula $O$
+\end_inset
+
+ а не 
+\begin_inset Formula $o$
+\end_inset
+
+, т.к.
+ на одну 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Получили производную: 
+\begin_inset Formula $\frac{dp_{i}\left(t\right)}{dt}=-\left(\lambda+\mu\right)p_{i}\left(t\right)+\lambda p_{i-1}\left(t\right)+\mu p_{i+1}\left(t\right)$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,...$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\frac{dp_{0}\left(t\right)}{dt}=-\lambda p_{0}\left(t\right)+\mu p_{1}\left(t\right)
+\]
+
+\end_inset
+
+Дальше мы хотим решить эту систему уравнений
+\end_layout
+
+\begin_layout Standard
+\noindent
+Для этой системы нам не хватает начальных условий
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $p_{i}\left(0\right)=p_{i}$
+\end_inset
+
+ уже без времени
+\end_layout
+
+\begin_layout Standard
+\noindent
+Поскольку явно решить эту систему сложно, то можно предположить, что существует
+ 
+\begin_inset Formula $\lim\limits _{t\to\infty}p_{i}\left(t\right)=p_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Мы сказали, что в правой части в пределе должны стоять константы, тогда
+ их производные – нули.
+ Тогда система приобретет вид 
+\begin_inset Formula 
+\[
+0=-\lambda p_{0}+\mu p_{1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+0=-\left(\lambda+\mu\right)p_{i}+\lambda p_{i-1}+\mu p_{i+1}
+\]
+
+\end_inset
+
+Откуда получим получим, что 
+\begin_inset Formula $p_{1}=\frac{\lambda}{\mu}p_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Обозначим 
+\begin_inset Formula $\rho=\frac{\lambda}{\mu}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\mu p_{2}=\left(\lambda+\mu\right)p_{1}+\lambda p_{0}=\left(\frac{\lambda}{\mu}\right)^{2}p_{0}+\frac{\lambda}{\mu}p_{0}+\frac{\lambda}{\mu}p_{0}
+\]
+
+\end_inset
+
+Отсюда 
+\begin_inset Formula $p_{0}=\frac{1}{\sum_{i=0}^{\infty}\rho^{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+При этом 
+\begin_inset Formula $\sum_{i=0}^{\infty}\rho^{i}<\infty$
+\end_inset
+
+ если 
+\begin_inset Formula $\rho<1$
+\end_inset
+
+ и тогда 
+\begin_inset Formula $\frac{1}{1-\rho}$
+\end_inset
+
+ - сумма убывающей геометрической прогрессией.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Следовательно, если 
+\begin_inset Formula $\rho<1$
+\end_inset
+
+, то 
+\begin_inset Formula $p_{0}=\left(1-\rho\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $p_{i}=\rho^{i}\left(1-\rho\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Мы нашли вероятность любого состояния в стационарном режиме
+\end_layout
+
+\begin_layout Standard
+\noindent
+Итак, стационарное распределение числа заявок в системе 
+\begin_inset Formula $M/M/1/\infty$
+\end_inset
+
+ является геометрическим распределением.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $N$
+\end_inset
+
+ - среднее число заявок в системе.
+ 
+\begin_inset Formula 
+\[
+N=\sum_{i=1}^{\infty}p_{i}i=\left(1-\rho\right)\sum_{i=0}^{\infty}i\rho^{i}=\frac{\rho}{1-\rho}
+\]
+
+\end_inset
+
+средняя длина очереди - 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Q=N-1$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+Q=\sum_{i=1}^{\infty}\left(i-1\right)p_{i}=\left(1-\rho\right)\sum_{i=1}^{\infty}\left(i-1\right)\rho^{i}=\left(1-\rho\right)\left[\sum_{i=1}^{\infty}i\rho^{i}-\sum_{i=1}^{\infty}\rho^{i}\right]=\frac{\rho^{2}}{1-\rho}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\nu\left(t\right)$
+\end_inset
+
+ число заявок в системе
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\tau$
+\end_inset
+
+ - время обслуживания.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Среднее время ожидания начала обслуживания 
+\series default
+
+\begin_inset Formula $\frac{\rho}{\mu\left(1-\rho\right)}=\bar{w}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+среднее время пребывания в системе 
+\series default
+
+\begin_inset Formula $\frac{1}{\mu\left(1-\rho\right)}=\bar{\nu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Параметр 
+\begin_inset Formula $\rho$
+\end_inset
+
+ называется 
+\series bold
+загрузкой системы
+\series default
+ (или 
+\series bold
+пропускной способностью
+\series default
+).
+\end_layout
+
+\begin_layout Part
+Стационарные распределения для системы M|M|1|r
+\end_layout
+
+\begin_layout Standard
+\noindent
+Тогда 
+\begin_inset Formula $p_{i}=\frac{1-\rho}{1-\rho^{r+2}}\rho^{i}$
+\end_inset
+
+ 
+\begin_inset Formula $i=0,..,r+1$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+p_{0}=\left[\sum_{i=0}^{n-1}\frac{\rho^{i}}{i!}+\frac{\rho^{n}}{n!}\frac{1-\left(\frac{\rho}{n}\right)^{r+1}}{\left(1-\frac{\rho}{n}\right)}\right]^{-1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p_{W=0}=\sum_{i=0}^{n-1}p_{i}=p_{0}\sum_{i=0}^{n-1}\frac{\rho^{i}}{i!}
+\]
+
+\end_inset
+
+
+\begin_inset Formula $W$
+\end_inset
+
+ - 
+\series bold
+среднее время пребывания в системе
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Вероятность потери заявки
+\series default
+ – когда заняты все системы и очередь задействована полностью? 
+\begin_inset Formula $P_{n+r}=\pi=\frac{\rho^{n+r}}{n!n^{r}}\cdot p_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Формулы Литтла
+\end_layout
+
+\begin_layout Standard
+\noindent
+Пусть 
+\begin_inset Formula $N$
+\end_inset
+
+ - среднее число заявок в системе со стационарным средним временем пребывания
+ в системе 
+\begin_inset Formula $\bar{\nu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Тогда 
+\begin_inset Formula $N=\lambda\bar{\nu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+За время 
+\begin_inset Formula $T$
+\end_inset
+
+ в среднем в систему поступит 
+\begin_inset Formula $\lambda T$
+\end_inset
+
+ заявок
+\end_layout
+
+\begin_layout Standard
+\noindent
+При этом каждая заявка в среднем проводит в системе время 
+\begin_inset Formula $\bar{\nu}$
+\end_inset
+
+.
+ Среднее время пребывания в системе 
+\begin_inset Formula $\lambda T$
+\end_inset
+
+ заявками равно 
+\begin_inset Formula $\lambda\bar{\nu}T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+При этом в каждый момент в системе находится 
+\begin_inset Formula $N=\frac{\lambda\bar{v}T}{T}=\lambda\bar{v}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Аналогично, 
+\begin_inset Formula $Q=\lambda\cdot\bar{w}$
+\end_inset
+
+ - эти формулы называются 
+\series bold
+формулами Литтла.
+\end_layout
+
+\begin_layout Chapter
+№17.
+ Система M|M|n|r ОДУ для распределений если r конечно
+\end_layout
+
+\begin_layout Chapter
+№18.
+ Стационарные распределения для системы M
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+M
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+n
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+r
+\end_layout
+
+\begin_layout Part
+Система M|M|n|r ОДУ для распределений если r конечно
+\end_layout
+
+\begin_layout Standard
+Число поступающих заявок - случайный процесс.
+ Самый простой процесс - пуассоновский.
+\end_layout
+
+\begin_layout Standard
+M|M|n|r
+\end_layout
+
+\begin_layout Standard
+Интенсивность пуассоновского процесса - 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Случайное время обслуживания заявки - 
+\begin_inset Formula $\tau$
+\end_inset
+
+ - экспоненциальный закон распределения с параметром 
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Регламент обслуживания в очереди может быть разнообразным.
+ Нетерпеливые заявки.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Показатели качества системы
+\series default
+: среднее число заявок в очереди, среднее время ожидания, и т.д.
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы задать 
+\begin_inset Formula $\tau_{\text{обсл}}$
+\end_inset
+
+ необходимо задать тройку 
+\begin_inset Formula $\left(\Omega,\mathcal{F},P\right)$
+\end_inset
+
+, случайный процесс - отображение 
+\begin_inset Formula $\xi:\Omega\rightarrow R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\{ \omega*\tau\left(\omega\right)<=t\right\} \in F$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P
+\begin_inset Formula $\left(\tau_{\text{обсл}}<=t\right)=\begin{cases}
+1-e^{-\mu t} & t>=0\\
+0 & t<=0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E\tau_{\text{обсл}}=\int_{\Omega}\tau_{\text{обсл}}\left(\omega\right)P\left(d\omega\right)=\int_{0}^{\infty}t\mu e^{-\mu t}dt=\frac{1}{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Входящий поток: пуассоновский процесс.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p\left(\nu\left(t\right)=k\right)=e^{-\lambda t}\frac{\left(\lambda t\right)^{k}}{k!}$
+\end_inset
+
+, 
+\begin_inset Formula $E\nu\left(t\right)=\lambda t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+M|M|n|r - система массового обслуживания, входящий поток пуассоновский,
+ время обслуживания - экспоненциально-распределенное, накопитель равен r,
+ число каналов равно n.
+ Таким образом, для задания системы, необходимо указать параметры распределения.
+ На основе этих данных, необходимо получить самые разнообразные характеристики
+ системы.
+ Возникают экономические задачи.
+\end_layout
+
+\begin_layout Standard
+TODO - т.к.
+ преподаватель просила давать определение для каждой переменной или коэффициента
+ в формуле, то нужно добавить в конец конспекта таблицу со всеми используемыми
+ символами и их расшифровкой.
+\end_layout
+
+\begin_layout Part
+Не вошло в вопросы
+\end_layout
+
+\begin_layout Section
+Показатели эффективности СМО
+\end_layout
+
+\begin_layout Standard
+Важенйшими показателями эффективности СМО являются абсолютная и относительная
+ пропускная способность.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Абсолютной пропускной способностью 
+\series default
+СМО назовем среднее число заявок, которое может обслужить система за единицу
+ времени.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Относительная пропускная способность
+\series default
+ - это средняя доля поступивших заявок, обслуживаемая системой, т.е.
+ это отношение среднего числа заявок, которое может обслужить система за
+ единицу времени к среднему числу заявок, поступивших в систему за это время.
+\end_layout
+
+\begin_layout Standard
+Кроме того, важжную роль в оценке СМО играют следующие показатели:
+\end_layout
+
+\begin_layout Enumerate
+Среднее число заявок в очереди
+\end_layout
+
+\begin_layout Enumerate
+Среднее число обслуживаемых заявок
+\end_layout
+
+\begin_layout Enumerate
+Среднее время ожидания в очереди
+\end_layout
+
+\begin_layout Enumerate
+Среднее время обслуживания
+\end_layout
+
+\begin_layout Subsection
+Расчет показателей одноканальной СМО с отказами
+\end_layout
+
+\begin_layout Standard
+Таблица 1.
+ Показатели эффективности одноканальной СМО с отказами.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+№
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Термин
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Обозначение
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Интенсивность входящего потока
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Интенсивность выходящего потока
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Приведенная интенсивность потока заявок
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Среднее время обслуживания заявки
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bar{t}_{serv}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Относительная пропускная способность
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Абсолютная пропускная способность 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вероятность того, что заявка обслужена
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{serv}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вероятность отказа
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{otk}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Траектория пуассоновского процесса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../D36B~1/DOCUME~1/6103~1/puasson.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(T_{k}\leq t\right)=\begin{cases}
+1-e^{-\lambda t}\\
+0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p\left(\nu_{\text{вых}}\left(t\right)=k\right)=e^{-\mu t}\frac{\left(\mu t\right)^{k}}{k!}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Постановка задачи:
+\series default
+ пусть задана СМО, т.е.
+ заданы 
+\begin_inset Formula $\mu,\lambda$
+\end_inset
+
+ и 
+\begin_inset Formula $n=1$
+\end_inset
+
+ (одноканальная система с отказом).
+ Требуется найти 
+\begin_inset Formula $\bar{t},\rho,q,A,P_{serv},P_{otk}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Формулы для рассчета
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\bar{t}_{serv}=\frac{1}{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rho=\frac{\lambda}{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $q=\frac{1}{\rho+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A=\lambda q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{serv}=q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{otk}=1-P_{serv}=1-q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Таблица для многоканальной системы
+\end_layout
+
+\begin_layout Standard
+Таблица 2.
+ Показатели эффективности многоканальной СМО с отказами.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+№
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Термин
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Обозначение
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Интенсивность входящего потока
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Интенсивность выходящего потока
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Приведенная интенсивность потока заявок
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Число каналов обслуживания
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $n,(n>1)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вероятность того, что занято 0,1,...,n каналов
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{0},p_{1},...,p_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Относительная пропускная способность
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Абсолютная пропускная способность
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вероятность того, что заявка обслужена
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{serv}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вероятность отказа
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{otk}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Среднее число занятых каналов
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bar{k}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Параметры 
+\begin_inset Formula $\rho,\lambda,\mu$
+\end_inset
+
+ такие же как в таблице 1.
+ 
+\end_layout
+
+\begin_layout Standard
+Основные объекты, которые нас будут интересовать: 
+\end_layout
+
+\begin_layout Standard
+Вероятность 
+\begin_inset Formula $p_{0},...,p_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{k}=P\left(\nu\left(t\right)=k\right)$
+\end_inset
+
+ вычисляются по формулам Эрланга: 
+\begin_inset Formula $p_{0}=\frac{1}{\sum_{k=0}^{n}\frac{\rho^{k}}{k!}}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{k}=\frac{\rho^{k}}{k!}p_{0}$
+\end_inset
+
+,
+\begin_inset Formula $\rho=\frac{\lambda}{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{otk}=p_{n}=\frac{\rho^{n}}{n!}\rho_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $q=1-p_{otk}=1-\frac{\rho^{n}}{n!}\rho_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A=\lambda q=\lambda\left(1-\frac{\rho^{n}}{n!}\rho_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\bar{k}=\frac{A}{\mu}\rho\left(1-\frac{\rho^{n}}{n!}p_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Пример 1: 
+\series default
+на вход многоканальной СМО поступает поток заявок с интенсивностью 11 заявок/час.
+ Среднее время обслуживания заявки 0,15 часа.
+ Каждая заявка приносит доход 130 рублей, а содержание одного канала обходится
+ 122 р/час.
+ Найти оптимальное число каналов СМО.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Решение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lambda=11$
+\end_inset
+
+,
+\begin_inset Formula $\mu=\frac{1}{0,15}=6,67$
+\end_inset
+
+ заявок/час.
+ 
+\begin_inset Formula $\rho=\frac{\lambda}{\mu}=\frac{11}{6,67}=1,65$
+\end_inset
+
+.
+ Заметим, что если система имеет 
+\begin_inset Formula $n$
+\end_inset
+
+, то доходность 
+\begin_inset Formula $D\left(n\right)=130\cdot A-122n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы найти A, нужно определить 
+\begin_inset Formula $q=\frac{1}{1+\rho}=0,38$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $n=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A=\lambda q=11\cdot130$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+D=130A-122=421,4 руб/час.
+\end_layout
+
+\begin_layout Standard
+Посчитать дома сами???
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $n=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продолжим это в следующий раз
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Решено
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+16.02.17 законспектировать
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+02.03.17 лекция
+\end_layout
+
+\begin_layout Section
+Марковские системы массового обслуживания
+\end_layout
+
+\begin_layout Standard
+Первая система, которую мы рассмотрим: M|
+\begin_inset Formula ${\cal E}_{m}|1|\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим СМО вида 
+\begin_inset Formula $1|{\cal E}_{m}|1|\infty$
+\end_inset
+
+, где M означает, что входящий поток имеет пуассоновское распределение с
+ параметром 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{E}_{m}$
+\end_inset
+
+ означает, что время обслуживания 
+\begin_inset Formula $\tau$
+\end_inset
+
+ имеет Эрланговское распределение с параметрами 
+\begin_inset Formula $\mu$
+\end_inset
+
+ и 
+\begin_inset Formula $n$
+\end_inset
+
+, т.е.
+ 
+\begin_inset Formula $P\left(\tau\leq x\right)=B\left(x\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $b\left(x\right)=B'\left(x\right)=\frac{\lambda^{m}x^{m-1}}{\left(m-1\right)!}e^{-\mu x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Рассматриваемая СМО имеет 1 канал и бесконечный накопитель (можно сказать,
+ что она не имеет отказов).
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\nu\left(t\right)$
+\end_inset
+
+ - число заявок в системе (отличается от числа заявок в очереди на 1).
+ Будет ли динамика система Марковской? Для того, чтобы понять это, нам понадобит
+ся новый объект: 
+\begin_inset Formula $\xi\left(t\right)$
+\end_inset
+
+ - 
+\series bold
+число фаз
+\series default
+, которое осталась обслужить для заявки, находящейся на обслуживании.
+ 
+\end_layout
+
+\begin_layout Standard
+Процесс 
+\begin_inset Formula $\nu\left(t\right)$
+\end_inset
+
+ не является марковским, однако процесс 
+\begin_inset Formula $\eta\left(t\right)=\left(\nu\left(t\right);\xi\left(t\right)\right)$
+\end_inset
+
+ уже является марковским.
+\end_layout
+
+\begin_layout Standard
+Пространство состояний этой системы процесса 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+ имеет вид 
+\begin_inset Formula $\mathcal{X}=\left\{ \left\{ 0\right\} ,\left\{ i,j\right\} ,i=0,...,n,...,j=1,...,m\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\{ 0\right\} $
+\end_inset
+
+ соответствует пустой системе.
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ - число заявок в системе.
+ 
+\begin_inset Formula $j$
+\end_inset
+
+ - число фаз, оставшисях для обслуживания.
+\end_layout
+
+\begin_layout Standard
+Определим переходные вероятности процесса 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+ за время 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Из состояния 
+\begin_inset Formula $\left\{ 0\right\} $
+\end_inset
+
+ можно перейти в состояние 
+\begin_inset Formula $\left(1,m\right)$
+\end_inset
+
+ (m означет число фаз, которые осталось обслужить) с вероятностью 
+\begin_inset Formula $\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+ (поступила заявка и начато обслуживание)
+\end_layout
+
+\begin_layout Enumerate
+Из состояния 
+\begin_inset Formula $\left\{ i,j\right\} $
+\end_inset
+
+ можно перейти в состояние 
+\begin_inset Formula $\left(i+1,j\right)$
+\end_inset
+
+ с вероятностью 
+\begin_inset Formula $\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+ (продолжается обслуживание заявки, но в систему поступила новая заявка)
+ или в состояние 
+\begin_inset Formula $\left(i,j-1\right)$
+\end_inset
+
+ 
+\begin_inset Formula $\mu\Delta+o\left(\Delta\right)$
+\end_inset
+
+ (окончилось обслуживание на 
+\begin_inset Formula $j$
+\end_inset
+
+-й фазе, осталась 
+\begin_inset Formula $j-1$
+\end_inset
+
+ фаза обслуживания)
+\end_layout
+
+\begin_layout Enumerate
+Из состояния 
+\begin_inset Formula $\left(i,1\right)$
+\end_inset
+
+ можно перейти в состояние 
+\begin_inset Formula $\left(i+1,j\right)$
+\end_inset
+
+ с вероятностью 
+\begin_inset Formula $\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+ или 
+\begin_inset Formula $\left(i-1,m\right)$
+\end_inset
+
+ с вероятносью 
+\begin_inset Formula $\mu\Delta+o\left(\Delta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $p_{0}\left(t\right)=P\left\{ \nu\left(t\right)=0\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{i,j}\left(t\right)=P\left\{ \nu\left(t\right)=i,\xi\left(t\right)=j\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сразу запишем дифференциальные уравнения.
+ Распределения 
+\begin_inset Formula $p_{0}\left(t\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $p_{i,j}\left(t\right)$
+\end_inset
+
+ следующей системе ОДУ.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{0}'\left(t\right)=-\lambda p_{0}\left(t\right)+\mu p_{1,1}\left(t\right)$
+\end_inset
+
+ - вероятность того, что система осталась пустой.
+ Доказывается как в прошлом семестре.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p'_{1,,j}\left(t\right)=-\left(\lambda+\mu\right)p_{1,,j}\left(t\right)+\mu p_{1,,j+1}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p'_{1,m}\left(t\right)=-\left(\lambda+\mu\right)p_{1,m}\left(t\right)+\lambda p_{0}\left(t\right)+\mu p_{2,1}\left(t\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p'_{i,j}\left(t\right)=-\left(\lambda+\mu\right)p_{i,j}\left(t\right)+\lambda p_{i-1,j}+\mu p_{1,j+1}\left(t\right)$
+\end_inset
+
+, 
+\begin_inset Formula $j<m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p'_{i,m}\left(t\right)=-\left(\lambda+\mu\right)p_{i,m}\left(t\right)+\lambda p_{i-1,m}\left(t\right)+\mu p_{i+1,1}\left(t\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Система (2.1)
+\end_layout
+
+\begin_layout Standard
+Рассмотрим уравнения, которым подчиняются 
+\begin_inset Formula $\lim_{t\rightarrow\infty}p_{i,j}\left(t\right)=P_{i,j}$
+\end_inset
+
+.
+ При этом величины 
+\begin_inset Formula $P_{i,j}$
+\end_inset
+
+ удовлетворяющие системе алгебраической соотношений (2), которая получается
+ из (1) при 
+\begin_inset Formula $\frac{dp_{i,j}}{dt}\equiv0$
+\end_inset
+
+ (заменяем все производные нулями в (2.1))
+\end_layout
+
+\begin_layout Standard
+Графы, соответствующие балансовым соотношениям (2) имеют вид (картинка в
+ отдельном файле).
+\end_layout
+
+\begin_layout Standard
+При этом в состоянии 
+\begin_inset Formula $\left(i,j\right)$
+\end_inset
+
+
+\begin_inset Formula $i\geq2,,j=1,...,m-1$
+\end_inset
+
+ суммарный поток вероятностей устроен так, что выходящий поток 
+\begin_inset Formula $\left(\lambda+\mu\right)p_{i,j}$
+\end_inset
+
+ и входящий поток 
+\begin_inset Formula $-\lambda p_{i-1,j}+\mu p_{i,j+1}$
+\end_inset
+
+ в сумме дают ноль.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим подмножество пространства 
+\begin_inset Formula ${\cal X}$
+\end_inset
+
+ состоящее из 
+\begin_inset Formula $\left\{ 0\right\} $
+\end_inset
+
+ и 
+\begin_inset Formula $\left\{ k,j\right\} $
+\end_inset
+
+ 
+\begin_inset Formula $k=1,...,i,j=1,...,m$
+\end_inset
+
+.
+ При этом мы получаем с учетом принципа локального баланса, что граф рассматрива
+емой системы имеет вид (в том же файле).
+\end_layout
+
+\begin_layout Standard
+Анализируя систему (2), мы получаем соотношение 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\lambda p_{0}= & \mu p_{1,1}\\
+\lambda p_{i,\cdot}= & p_{i+1,1}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Где символ 
+\begin_inset Formula $\cdot$
+\end_inset
+
+ обозначет суммирование по всем значениям соответствующего дискретного аргумента.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+30.03.17
+\series default
+ 
+\series bold
+лекция
+\end_layout
+
+\begin_layout Standard
+СМО - обслуживание многофазовое.
+ Не смотря на то, что в каждой фазе обслуживание по экспоненциальному закону
+ с постоянным показателем, закон обслуживания оказывается Эрланговским.
+\end_layout
+
+\begin_layout Standard
+Это некие системы типа сложной Марковской цепи.
+ Мы хотели бы вывести уравнение Колмогорова.
+ Это будет система ОДУ.
+ Ищем стационарное решение.
+ Мы верим в то, что это эргодическая.
+ На больших временах становится устойчивой.
+ Вместо системы ОДУ возникает некая система алгебраических уравнений.
+ Так или иначе, система сводится к виду, пригодному для исследования.
+\end_layout
+
+\begin_layout Standard
+Нас интересуют следующие вопросы: среднее число заявок, среднее число заявок
+ в очереди и некие временные параметры.
+\end_layout
+
+\begin_layout Standard
+Текущая система: пуассоновский входящий поток, вторая буква уже не M, а
+ 
+\begin_inset Formula $e_{m}$
+\end_inset
+
+ - закон Эрланга.
+\end_layout
+
+\begin_layout Standard
+Какое среднее время заявки должны провести в очереди/системе?
+\end_layout
+
+\begin_layout Standard
+Нужны функции распределения.
+ Функция распределения суммы экспоненциальных распределений случайных величин.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mu e^{-\mu t}$
+\end_inset
+
+- как найти преобразование Лапласа для этой функции: 
+\begin_inset Formula $\int_{0}^{\infty}e^{-st}\mu e^{-\mu t}dt=\omega_{H}\left(t\right)$
+\end_inset
+
+ - перемножение - сложение показателей.
+ 
+\begin_inset Formula $=\frac{\mu}{\mu+s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Когда возникает Эрланговское распределение, то суммируются показатели преобразов
+ания 
+\begin_inset Formula $\omega_{\epsilon}\left(s\right)=\left(\frac{\mu}{\mu+s}\right)^{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{\epsilon}\left(t\right)=\frac{\mu^{m}t^{m-1}}{\left(m-1\right)!}e^{-\mu t}$
+\end_inset
+
+ - будем интегрировать по частям, убирая показатель экспоненты до тех пор,
+ пока не дойдем до экспоненты.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $W\left(x\right)$
+\end_inset
+
+ - время ожидания (время, проведенное в очереди).
+ Преобразование Лапласа для него.
+ 
+\begin_inset Formula $\omega\left(s\right)=\int_{0}^{\infty}e^{-sx}dW\left(x\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=p_{0}+\sum_{i=1}^{\infty}\sum_{j=1}^{m}\left(\frac{\mu}{\mu+s}\right)^{\left(i-1\right)m+j}p_{ij}=p_{0}+\left(\frac{\mu+s}{\mu}\right)^{m}\sum\left(\frac{\mu}{\mu+s}\right)^{j}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sum\left(\frac{\mu}{\mu+s}\right)^{j}p_{ij}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{j}\left(z\right)=\sum_{i=0}^{\infty}z^{i}p_{ij}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=p_{0}+\left(\frac{\mu+s}{\mu}\right)^{m}P_{j}\left(\frac{\mu}{\mu+s}\right)=\frac{s\left(\mu+s\right)^{m}\left(1-\rho\right)}{\left(s-\lambda\right)\left(\mu+s\right)^{m}+\lambda\mu^{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Стационарное распределение 
+\begin_inset Formula $V\left(x\right)$
+\end_inset
+
+ времени пребывания заявки в системе имеет преобразование Лапаласа вида
+ 
+\begin_inset Formula $\phi\left(s\right)=\int_{0}^{\infty}e^{-sx}dV\left(x\right)=\omega\left(s\right)\left(\frac{\mu}{\mu+s}\right)^{m}=\frac{s\mu^{m}\left(1-\rho\right)}{\left(s-\lambda\right)\left(\mu+s\right)^{m}+\lambda\mu^{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w=-\omega\left(0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция распределения 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+ и ее функция Лапласа, то 
+\begin_inset Formula $\int_{0}^{\infty}e^{-sx}w\left(x\right)dx=\omega\left(s\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продиффиренцируем левую часть 
+\begin_inset Formula $\int_{0}^{\infty}\left(-x\right)e^{-sx}w\left(x\right)dx|_{s=0}=0=-\int xw\left(x\right)dx=-E\tau_{\text{оч}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\omega=-\omega\left(0\right)=\frac{\rho\left(m+1\right)}{2\mu\left(1-\rho\right)}=\frac{Q}{\lambda}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Мы получили то, что называется формулами Лиддла.
+\end_layout
+
+\begin_layout Standard
+Далее найти среднее время, проведенное заявкой в системе 
+\begin_inset Formula $v=-\phi'\left(0\right)=\frac{m}{\lambda}\left[1+\frac{\rho\left(1+\frac{1}{m}\right)}{2\left(1-\rho\right)}\right]=\frac{N}{\lambda}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как решать системы ОДУ? M|
+\begin_inset Formula $e_{m}$
+\end_inset
+
+|1|
+\begin_inset Formula $\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Что такое производящая функция: 
+\begin_inset Formula $p_{j}\left(z,t\right)=\sum_{k=0}^{\infty}z^{k}p_{kj}\left(t\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Нестационарные характеристики.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{d}{dz}p\left(t,z\right)|_{z=1}=\sum kz^{k-1}p_{kj}\left(t\right)|_{z=1}=\sum_{k=0}^{\infty}kp_{k}\left(t\right)=E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Возвращаясь к системе ОДУ (2.1) и умножая 
+\begin_inset Formula $i$
+\end_inset
+
+-е уравнение этой системы на 
+\begin_inset Formula $z^{i}$
+\end_inset
+
+ с последующим суммированием, мы получим ОДУ для функции 
+\begin_inset Formula $P_{j}\left(t,z\right)=\sum_{z}^{i}p_{ij}\left(t\right)$
+\end_inset
+
+ уравнение которое имеет вид, 
+\begin_inset Formula $\frac{d}{dt}P_{j}\left(t,z\right)=-\left(\lambda+\mu\right)p_{j}\left(t,z\right)+\lambda zP_{i}\left(t,z\right)+\mu P_{j+1}\left(t,z\right)$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,...,m-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{d}{dt}P_{m}\left(t,z\right)+\frac{d}{dt}P_{0}\left(t\right)=-\lambda\left[P_{m}\left(t,z\right)+P_{0}\left(t\right)\right]-\mu P_{m}\left(t,z\right)+\lambda z\left[P_{m}\left(t,z\right)+P_{0}\left(t\right)\right]+\frac{\mu}{z}P_{1}\left(t,z\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Это уже не бесконечная система уравнений.
+ 
+\end_layout
+
+\begin_layout Standard
+Решая полученную сстему с помощью преобразований Лапласа, вводя обозначения
+ 
+\begin_inset Formula $\pi_{j}\left(t,z\right)=\int_{0}^{\infty}e^{-st}P_{j}\left(t,z\right)dt$
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{0}\left(s\right)=\int_{0}^{\infty}e^{-st}P_{0}\left(t\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\pi_{j}\left(s,z\right)-P_{j}\left(z\right)=-\left[\lambda\left(1-z\right)\mu\right]\pi_{j}\left(s,z\right)+\mu\pi_{j+1}\left(s\right)$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,...,m-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\pi_{m}\left(s\right)-P_{m}\left(z\right)+sd\pi_{0}\left(s\right)-P_{0}=-\left[\lambda\left(1-z\right)+\mu\right]P_{m}\left(s,z\right)-\lambda\left(1-z\right)\pi_{0}\left(s\right)+\frac{\mu}{z}\pi_{1}\left(s,z\right)$
+\end_inset
+
+, где 
+\begin_inset Formula $P_{m}\left(z\right)=\sum_{j=0}^{\infty}z^{i}p_{ij}\left(0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{0}=p_{0}\left(t\right)$
+\end_inset
+
+ - совпали.
+ Вероятность того, что система пуста
+\end_layout
+
+\begin_layout Standard
+Мы взяли систему, у которой входящий поток был Пуассоновский, очередь бесконечна.
+ Сумели найти более-менее явные выражения.
+ Все остальное посчитает компьютер, ему нужно будет лишь решать СЛАУ.
+\end_layout
+
+\begin_layout Section
+Система с повторными заявками
+\end_layout
+
+\begin_layout Standard
+Система с повторяющимися заявками - однокнальная, без накопителя и экспоненциаль
+ным временем обслуживания.
+\end_layout
+
+\begin_layout Standard
+Предположим, что заявка, получившая отказ, повторяет попытку войти в систему.
+ Возникает поток повторных заявок.
+\end_layout
+
+\begin_layout Standard
+Повторная заявка не может попасть на обслуживание сразу после того, как
+ обслуживающее устройство освободилось.
+ Она может попасть на обслуживание, если произведет повторную попытку, т.е.
+ через случайное время 
+\begin_inset Formula $\tau$
+\end_inset
+
+ распределенное по экспоненциальному закону с параметром 
+\begin_inset Formula $\gamma$
+\end_inset
+
+.
+ Заявка может уйти с вероятностью 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Распределение потока повторных заявок в системе
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\nu\left(t\right)$
+\end_inset
+
+ - число повторных заявок.
+ Обозначим 
+\begin_inset Formula $\chi\left(t\right)$
+\end_inset
+
+ величину вида 
+\begin_inset Formula $\chi\left(t\right)=\begin{cases}
+1 & \text{прибор занят}\\
+0 & \text{прибор свободен}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\eta\left(t\right)=\left(\nu\left(t\right),\chi\left(t\right)\right)$
+\end_inset
+
+ - это марковский процесс с пространством состояний вида 
+\begin_inset Formula ${\cal X}=\left\{ \left(i,j\right),i=0,1,...,,j=0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Описать марковскую цепь - описать множество ее состояний и вероятности перехода
+ из одного состояния в другое.
+\end_layout
+
+\begin_layout Standard
+Опишем переходные вероятности процесса 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Пункт 1
+\series default
+: Из состояния 
+\begin_inset Formula $\left(i,0\right)\rightarrow\left(i,1\right)$
+\end_inset
+
+ (поступление новой заявки и начало обслуживания) с интенсивностью 
+\begin_inset Formula $\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+ и в состояние 
+\begin_inset Formula $\left(i-1,1\right)$
+\end_inset
+
+ с интенсивностью 
+\begin_inset Formula $i\gamma\Delta+o\left(\Delta\right)$
+\end_inset
+
+ (произвела удачную повторную попытку одна из 
+\begin_inset Formula $i$
+\end_inset
+
+ заявок).
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Пункт 2
+\series default
+: 
+\begin_inset Formula $\left(i,1\right)$
+\end_inset
+
+ за время 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ система может перейти в состояние 
+\begin_inset Formula $\left(i,0\right)$
+\end_inset
+
+ с интенсивностью 
+\begin_inset Formula $\mu\Delta+o\left(\Delta\right)$
+\end_inset
+
+ (окончено обслуживание заявки) и с итенсивностью 
+\begin_inset Formula $\lambda\left(1-q\right)\Delta+o\left(\Delta\right)$
+\end_inset
+
+ система перейдет в состояние 
+\begin_inset Formula $\left(i+1,1\right)$
+\end_inset
+
+ (поступила новая заявка и застала прибор занятым, однако с вероятностью
+ 
+\begin_inset Formula $\left(1-q\right)$
+\end_inset
+
+ эта новая заявка осталась в системе) и в состояние 
+\begin_inset Formula $\left(i-1,1\right)$
+\end_inset
+
+ с вероятностью 
+\begin_inset Formula $i\gamma\Delta+o\left(\Delta\right)$
+\end_inset
+
+ (одна из повторных заявок произвела новую попытку неудачно и ушла из системы)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13.04.17 лекция
+\end_layout
+
+\begin_layout Standard
+То, чем мы занимаемся на практике - лучше мы это сделали на компьютерах.
+ Для этого нужен компьютерный класс.
+ Где его найти?..u
+\end_layout
+
+\begin_layout Standard
+Система с повторными заявками.
+ Простой случай M|M|1|0.
+ Если заявка застает занятую систему, то уходит.
+ Но 
+\begin_inset Quotes eld
+\end_inset
+
+ушедшая
+\begin_inset Quotes erd
+\end_inset
+
+ заявка имеет несколько возможностей: вернуться.
+\end_layout
+
+\begin_layout Standard
+Число повторных заявок, которые могут вернуться в систему и состояние системы.
+ Процесс 
+\begin_inset Formula $\eta\left(t\right)=\left(\nu\left(t\right),\chi\left(t\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\chi\left(t\right)=\begin{cases}
+0 & \text{занят}\\
+1 & \text{свободен}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как задать Марковскую цепь?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula ${\cal X}=\left\{ \left(i,j\right),i=0,1,...,j=0,1\right\} $
+\end_inset
+
+ - пространство состояний
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(i,0\right)$
+\end_inset
+
+ - приходит заявка и застает свободную систему.
+ Ее сразу обслуживают, т.е.
+ 
+\begin_inset Formula $\rightarrow\left(i,1\right)$
+\end_inset
+
+.
+ Либо 
+\begin_inset Formula $\rightarrow\left(i-1,1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вероятности соответственно 
+\begin_inset Formula $\lambda\Delta+o\left(\Delta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+и 
+\begin_inset Formula $i\gamma\Delta+o\left(\Delta\right)$
+\end_inset
+
+ где 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ - случайное время, когда процесс может повторить попытку, 
+\begin_inset Formula $\tau$
+\end_inset
+
+ - время, прошедшее до попытки дозвониться, 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ - его параметр.
+ Типичная модель для телефонной станции.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(i,1\right)$
+\end_inset
+
+ можем перейти в состояние 
+\begin_inset Formula $\left(i,0\right)$
+\end_inset
+
+ - 
+\begin_inset Formula $\mu\Delta+o\left(\Delta\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\rightarrow\left(i+1,1\right)$
+\end_inset
+
+ - во первых пришла новая заявка, но она застала систему занятой, а предыдущая
+ не передумала уходить, т.е.
+ 
+\begin_inset Formula $\lambda\left(1-q\right)\Delta+o\left(\Delta\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Теперь нужно описать вероятности перехода из одного состояния в другое если
+ известны эти интенсивности.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $P_{i0}\left(t\right)=P\left\{ \nu\left(t\right)=i,\chi\left(t\right)=0\right\} $
+\end_inset
+
+ - вероятность того, что в системе 
+\begin_inset Formula $i$
+\end_inset
+
+ повторных заявок (повторов) и прибор свободен.
+ 
+\begin_inset Formula $P_{i1}=P\left(\nu\left(t\right)=i,\chi\left(t\right)=1\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Рассмотрим систему уравнений Колможгорова для СМО с повторами заявок.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{p}_{i0}\left(t\right)=-\left(\lambda+i\gamma\right)p_{i0}\left(t\right)+\mu p_{i1}\left(t\right),i\geq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{p}_{01}\left(t\right)=-\left(\lambda\left(1-q\right)+\mu\right)p_{01}+\lambda p_{00}\left(t\right)+\gamma p_{10}\left(t\right)+\gamma qp_{11}\left(t\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Последнее слагаемое - завка подождала и решила уйти.
+ 
+\end_layout
+
+\begin_layout Standard
+Предпоследнее - азявка с интенсинвостью 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ решила повториться.
+\end_layout
+
+\begin_layout Standard
+Возможности изменение 
+\begin_inset Formula $\chi$
+\end_inset
+
+ мы исчерпали.
+ Что будет для других 
+\begin_inset Formula $i$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{p}_{i1}\left(t\right)=-\left(\lambda\left(1-q\right)+\mu+\gamma qp\right)p_{i1}\left(t\right)+\lambda\left(1-q\right)p_{i-1,1}\left(t\right)+\lambda p_{i0}\left(t\right)+\gamma\left(i+1\right)p_{i+1,0}\left(t\right)+\gamma q\left(i+1\right)p_{i+1,1}\left(t\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Вся эта система - 
+\series bold
+(7.1)
+\end_layout
+
+\begin_layout Standard
+Система была в 
+\begin_inset Formula $p_{i+1,1}$
+\end_inset
+
+ - это может произойти из-за того, что заявка подождала, махнула рукой и
+ ушла, а прибор в это время работает.
+\end_layout
+
+\begin_layout Standard
+Одна из 
+\begin_inset Formula $i$
+\end_inset
+
+ заявок решила повторить свою попытку, ждала время 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, перешли.
+ 
+\end_layout
+
+\begin_layout Standard
+Новая заявка пополнила систему.
+\end_layout
+
+\begin_layout Standard
+Пришла новая заявка, решила не оставлять систему и возникла структура.
+\end_layout
+
+\begin_layout Standard
+Что мы дальше делаем.
+\end_layout
+
+\begin_layout Standard
+Решать сложно, найдем стационарное решение.
+ Приравниваем производные к нулю.
+\end_layout
+
+\begin_layout Standard
+Стационарное распределение числа заявок.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим систему
+\begin_inset Formula 
+\[
+\begin{cases}
+0= & -\left(\lambda+i\gamma\right)p_{i0}+\mu p_{i1}\\
+0= & -\left(\lambda\left(1-q\right)+\mu\right)p_{01}+\lambda p_{00}+\gamma p_{10}+\gamma qp_{11}\\
+0= & -\left(\lambda\left(1-q\right)+\mu+i\gamma q\right)p_{i1}+\lambda\left(1-q\right)p_{i-1,1}+\lambda p_{i0}+\gamma\left(i+1\right)p_{i+1,0}+\gamma q\left(i+1\right)p_{i+1,1}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(7.2) - система глобального баланса
+\end_layout
+
+\begin_layout Standard
+Суммарный поток вероятности 
+\begin_inset Formula $\left(\lambda+i\gamma\right)P_{i0}$
+\end_inset
+
+ выхода из состояния 
+\begin_inset Formula $\left(i,0\right)$
+\end_inset
+
+ образуется за счет поступления на прибор либо новой заявки либо одной из
+ повторных заявок, а попасть в это состояние можно после завершени обслуживания.
+ Равенство этих потоков - это первое уравнение в системе 
+\begin_inset Formula $\left(7.2\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Из состояния 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+ можно выйти (причем суммарный поток вероятности выхода 
+\begin_inset Formula $\left(\lambda\left(1-q\right)+\mu\right)p_{01}$
+\end_inset
+
+) за счет поступления заявки, заставшей прибор занятым и ставшей с вероятностью
+ 
+\begin_inset Formula $\left(1-q\right)$
+\end_inset
+
+ повторным либо после того, как завершено обслуживание на приборе, а попасть
+ в это состояние можно при поступлении заявки в свободную систему (поток
+ вероятности 
+\begin_inset Formula $\lambda p_{00}$
+\end_inset
+
+) либо при удачном завершении попытки единственной повторной заявки (с вероятнос
+тью 
+\begin_inset Formula $\gamma p_{10}$
+\end_inset
+
+) или при неудачной попытке повторной заявки (с вероятностью 
+\begin_inset Formula $\gamma qp_{11}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы решить (7.2), просуммируем первое соотношение в системе от
+ 
+\begin_inset Formula $i+1$
+\end_inset
+
+ до 
+\begin_inset Formula $\infty$
+\end_inset
+
+, а третье от 
+\begin_inset Formula $i$
+\end_inset
+
+ до 
+\begin_inset Formula $\infty$
+\end_inset
+
+ и сложим полученные соотношения.
+\end_layout
+
+\begin_layout Standard
+При этом, мы получим гораздо более простые связи
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\lambda p_{00}= & \mu p_{01}\\
+\lambda p_{10}+\lambda\left(1-q\right)p_{i-1,1}= & \left(\mu+i\gamma q\right)p_{i1}
+\end{cases}$
+\end_inset
+
+ 
+\series bold
+
+\begin_inset Formula $\left(i=1..\infty\right)$
+\end_inset
+
+
+\series default
+ 
+\series bold
+(7.3), 
+\end_layout
+
+\begin_layout Standard
+Выражая 
+\begin_inset Formula $p_{10}$
+\end_inset
+
+ через 
+\begin_inset Formula $p_{i1}$
+\end_inset
+
+ и подставляя во второе слагаемое в (7.3) полуим 
+\begin_inset Formula $\left(\mu+i\gamma q-\frac{\lambda\mu}{\lambda+i\gamma}\right)p_{i,1}=\lambda\left(1-q\right)p_{i-1,1}$
+\end_inset
+
+, из этих формул следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{i0}=p_{00}\sigma_{i}\prod_{j=0}^{i}\vartheta_{j},p_{i1}=p_{00}\prod_{j=0}^{i}\vartheta_{j}$
+\end_inset
+
+ где 
+\begin_inset Formula $\vartheta_{0}=\rho=\frac{\lambda}{\mu}$
+\end_inset
+
+, 
+\begin_inset Formula $\vartheta_{i}=\frac{\lambda\left(1-q\right)\left(\lambda+i\gamma\right)}{i\gamma\left(\mu+q\lambda+iq\gamma\right)},\sigma_{i}=\frac{\mu}{\lambda+i\gamma}$
+\end_inset
+
+.
+ Все эти формулы - 
+\series bold
+(7.4)
+\series default
+.
+ 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ - величина, обратная ропускной способности.
+ Т.к.
+ 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ не равна нулю, то возникают соотношения.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+27.04.17 лекция
+\end_layout
+
+\begin_layout Standard
+Работаем с Марковскими цепями.
+ Цепь - потому что дискретное множество состояний.
+ Входящий поток - Макровская цепь.
+ Пуассоновский поток является цепью.
+ 
+\end_layout
+
+\begin_layout Standard
+Какие еще есть цепи.
+ Число заявок в системе, число заявок в очереди.
+ Эти процессы принимают дискретные значения, но время непрерывное.
+ Все, что связано с задачами, есть в мудле.
+ 
+\end_layout
+
+\begin_layout Standard
+Продолжаем рассматривать системы с отказами (т.е.
+ последняя цифра в классификации Кенделла - 0).
+\end_layout
+
+\begin_layout Standard
+Первый поток - новые заявки, второй - ушедшие заявки.
+ Заявки возвращаются с некоей вероятностью.
+ Нужно описывать двухкомпонентным потоком но все равно это будет марковская
+ цепь.
+ 
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы описать цепь, нужно задать пространство состояний (оно дискретно
+, но может иметь сложную структуру) и определить - как выполняется переход
+ из одной системы в другую.
+\end_layout
+
+\begin_layout Standard
+Есть прямые уравнения Колмогорова для этой системы.
+ Сначала рассмотрим стационарное решение.
+\end_layout
+
+\begin_layout Standard
+Не хватает 
+\begin_inset Formula $p_{00}$
+\end_inset
+
+ и 
+\begin_inset Formula $p_{01}$
+\end_inset
+
+ -нужно просуммировать все слагаемые от 0 до 
+\begin_inset Formula $\infty$
+\end_inset
+
+, и выразим 
+\begin_inset Formula $p_{00}$
+\end_inset
+
+ из этой формулы.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{00}$
+\end_inset
+
+ находим из условий нормировки 
+\begin_inset Formula $p_{\bullet,\bullet}=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $p_{\bullet,\bullet}=\sum_{j}\sum_{i}p_{i,j}$
+\end_inset
+
+.
+ Таким образом, 
+\begin_inset Formula $p_{0,0}=\left[\sum_{i=0}^{\infty}\left(1+\sigma_{i}\right)\prod_{j=0}^{i}\vartheta_{j}\right]^{-1}$
+\end_inset
+
+
+\series bold
+ (7.5)
+\series default
+.
+ Если 
+\begin_inset Formula $q>0$
+\end_inset
+
+, то (7.5) сходится при всех 
+\begin_inset Formula $\lambda,\mu,\gamma>0$
+\end_inset
+
+, а если 
+\begin_inset Formula $q=0$
+\end_inset
+
+, то сходимость имеет место при 
+\begin_inset Formula $\rho=\frac{\lambda}{\mu}<1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Таким образом, были получены некоторые ряды и рассмотрена их сходимость.
+ но для работы с системой нужны конкретные числа.
+ 
+\end_layout
+
+\begin_layout Standard
+Альтернативный способ нахождения хаарктеристик СМО M|M|1|0 с повторными
+ заявками состоит в отыскании производящей функции 
+\begin_inset Formula $P_{j}\left(z\right)=\sum_{i=0}^{\infty}p_{i,j}z^{i}$
+\end_inset
+
+ - две производящие функии.
+ 
+\end_layout
+
+\begin_layout Standard
+Умножая 
+\begin_inset Formula $i$
+\end_inset
+
+-е уравнение в (7.3) для 
+\begin_inset Formula $p_{i,j}$
+\end_inset
+
+ на 
+\begin_inset Formula $z^{i}$
+\end_inset
+
+ получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $0=-\lambda P_{0}\left(z\right)-\gamma zP_{0}'\left(z\right)+\mu P_{1}\left(z\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $0=\lambda P_{0}m(z$
+\end_inset
+
++
+\begin_inset Formula $\gamma P_{0}'\left(z\right)+\left[\lambda\left(1-q\right)\left(1-z\right)+\mu\right]P_{1}\left(z\right)+\gamma q\left(1-z\right)P_{1}\left(z\right)$
+\end_inset
+
+ 
+\series bold
+(7.6) - система
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+При 
+\begin_inset Formula $q=0$
+\end_inset
+
+ мы получаем соотношение: 
+\begin_inset Formula $0=-\lambda P_{0}\left(z\right)-\gamma zP_{0}'\left(z\right)+\mu P_{1}\left(z\right)$
+\end_inset
+
+, 
+\begin_inset Formula $0=\lambda P_{0}\left(z\right)+\gamma P_{0}'\left(z\right)-\left(\lambda\left(1-z\right)+\mu\right)P_{1}\left(z\right)$
+\end_inset
+
+ 
+\series bold
+(7.7)
+\end_layout
+
+\begin_layout Standard
+откуда следует соотношение 
+\begin_inset Formula $\alpha\left(1-\rho z\right)p_{0}'\left(z\right)-\rho P_{0}\left(z\right)=0$
+\end_inset
+
+, где 
+\begin_inset Formula $\alpha=\frac{\gamma}{\lambda},\rho=\frac{\lambda}{\mu}$
+\end_inset
+
+.
+ линейное однородное уравнение.
+ Решение этого уравнения имеет вид: 
+\begin_inset Formula $P_{0}\left(z\right)=C\left(1-\rho z\right)^{-1/\alpha}$
+\end_inset
+
+ где C - постоянная, которую потом нужно будет найти, и в силу (7.7) 
+\begin_inset Formula $P_{1}\left(z\right)=C\rho\left(1-\rho z\right)^{-1-1/\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, 
+\begin_inset Formula $P\left(z\right)=P_{0}\left(z\right)+P_{1}\left(z\right)$
+\end_inset
+
+ удовлетворяет соотношениям 
+\begin_inset Formula $P\left(z\right)=\frac{C\left[1+\rho\left(1-z\right)\right]}{\left(1-\rho z\right)^{1+1/\alpha}}$
+\end_inset
+
+.
+ Постоянная 
+\begin_inset Formula $C$
+\end_inset
+
+ вычисляется из условий нормировки 
+\begin_inset Formula $P\left(1\right)=1$
+\end_inset
+
+, т.е.
+ 
+\begin_inset Formula $C=\left(1-\rho\right)^{1+1/\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Дифференцируя выражения для 
+\begin_inset Formula $P_{i,j}$
+\end_inset
+
+ и вычисяляя производную при 
+\begin_inset Formula $z=1$
+\end_inset
+
+, получим, что 
+\begin_inset Formula $P_{i,0}=\frac{1}{i!}P_{0}^{\left(i\right)}\left(1\right)=\left(1-\rho\right)^{1+1/\alpha}\rho^{i}C_{1/\alpha+1}^{i}$
+\end_inset
+
+, где 
+\begin_inset Formula $\left(i\right)$
+\end_inset
+
+ обозначает, что 
+\begin_inset Formula $i$
+\end_inset
+
+ раз продифференцировали.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{i,1}=\frac{1}{i!}P_{1}^{\left(i\right)}\left(1\right)=\left(1-\rho\right)^{1+1/\alpha}\rho^{i+1}C_{1/\alpha+i}^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Стационарное среднее число 
+\begin_inset Formula $N$
+\end_inset
+
+ повторных заявок 
+\begin_inset Formula $N=P'\left(1\right)=\frac{\rho\left(1+\alpha\rho\right)}{\alpha\left(1-\rho\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Стационарная вероятность того, что поступившая в систему заявка будет обслужена
+ с первой попытки 
+\begin_inset Formula $P_{w=0}=\sum_{i=0}^{\infty}p_{i,0}=P_{0}\left(1\right)=1-\rho$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Многим вещам приходится верить на слово, если их подставить, то они будут
+ работать.
+\end_layout
+
+\begin_layout Standard
+Если заложить эти формулы в программы, то программы все посчитают.
+ 
+\end_layout
+
+\begin_layout Section
+Нестационарные характерстики СМО с повторными заявками
+\end_layout
+
+\begin_layout Standard
+Будем полагать 
+\begin_inset Formula $q=0$
+\end_inset
+
+ (все заявки повторяют попытки).
+ При этом будем пользоваться производящей функцией.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{j}\left(t,z\right)=\sum_{i=0}^{\infty}p_{i,j}\left(t\right)z^{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Из системы (7.1) следует 
+\begin_inset Formula $\frac{\partial}{\partial t}P_{0}\left(t,z\right)=-\lambda p_{0}\left(t,z\right)-\gamma z\frac{\partial}{\partial z}P_{0}\left(t,z\right)+\mu P_{1}\left(t,z\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial}{\partial t}P_{1}\left(t,z\right)=\lambda_{z}P_{1}\left(t,z\right)-\left(\lambda+\mu\right)P_{1}\left(t,z\right)+\lambda P_{0}\left(t,z\right)+\gamma\frac{\partial}{\partial z}P_{0}\left(t,z\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя преобразование Лапласа 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\pi_{0}\left(s,z\right)=\int_{0}^{\infty}e^{-st}P_{0}\left(t,z\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\pi_{1}\left(s,z\right)=\int_{0}^{\infty}e^{-st}P_{1}\left(t,z\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Преобразование Лапласа от производной: 
+\begin_inset Formula $s\pi_{0}\left(s,z\right)-P_{0}\left(s,z\right)=-\lambda\pi_{0}\left(s,z\right)-\gamma z\frac{d}{dz}\pi_{0}\left(s,z\right)+\mu\pi_{1}\left(s,z\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\pi_{1}\left(z\right)-P_{1}\left(z\right)=\lambda z\pi_{1}\left(s,z\right)-\left(\lambda+\mu\right)\pi_{1}\left(s,z\right)+\lambda\pi_{0}\left(s,z\right)+\gamma\frac{d}{dz}\pi_{0}\left(s,z\right)$
+\end_inset
+
+ 
+\series bold
+(*)
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $P_{0}\left(z\right)=\sum_{i=0}^{\infty}p_{i,0}\left(0\right)z^{i}$
+\end_inset
+
+, 
+\begin_inset Formula $P_{1}\left(z\right)=\sum P_{i,1}\left(0\right)z^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражая 
+\begin_inset Formula $\pi_{1}$
+\end_inset
+
+ через 
+\begin_inset Formula $\pi_{0}$
+\end_inset
+
+ и подставляя во второе соотношение (*), получим 
+\begin_inset Formula $\frac{d}{dz}\pi_{0}\left(s,z\right)-\frac{\left(\lambda+s\right)\left(\lambda+\mu+s\right)-\lambda\mu-\lambda\left(\lambda+s\right)z}{\gamma\left[\lambda z^{2}-\left(s+\lambda+\mu\right)z+\mu\right]}\pi_{0}\left(s,z\right)=\frac{\left(s+\lambda+\mu-\lambda z\right)P_{0}\left(z\right)+\mu P_{1}\left(z\right)}{\gamma\left[\lambda z^{2}-\left(s+\lambda+\mu\right)z+\mu\right]}$
+\end_inset
+
+ 
+\series bold
+(7.8)
+\end_layout
+
+\begin_layout Standard
+Получили неоднородное ОДУ, но с переменными коэффициентами.
+ С одной стороны, мы занем как его решать.
+\end_layout
+
+\begin_layout Standard
+Дальше возникают дроби - когда эти дроби будут конечными, не обратятся ли
+ в бесконечность и т.д.
+\end_layout
+
+\begin_layout Standard
+Осталось лишь исследовать эти выражения.
+ После этого, мы досчитаем все характеристики системы.
+ Это будет конец курса.
+\end_layout
+
+\begin_layout Standard
+Разбор этой структуры довольно громоздкий.
+ 
+\end_layout
+
+\begin_layout Standard
+Полученное выражение таково, что оно мало что говорит сразу для того, чтобы
+ понимать - что с ним делать.
+ Оно имеет вид дроби.
+ Это долго, поставим на этом точку.
+ Все равно, она не входит в экзамен :)
+\end_layout
+
+\begin_layout Section
+Условные вероятности и условные математические ожидания.
+ 
+\begin_inset Formula 
+\[
+\Omega=\sum_{k=1}^{\infty}A_{k},A_{k}A_{j}=\emptyset,k\ne j
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Условная вероятность 
+\begin_inset Formula $P\left(B|A_{k}\right)=\frac{P\left(BA_{k}\right)}{P\left(A_{k}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Условные математические ожидания: 
+\series default
+ 
+\begin_inset Formula 
+\[
+P_{A_{k}}\left(B\right)=P\left(B|A_{k}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+E\left[\xi|A_{k}\right]=\sum_{k=1}^{n}x_{k}P_{A_{k}}\left(B\right)
+\]
+
+\end_inset
+
+Условное математическое ожидание – математическое ожидание относительно
+ условной вероятности.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Т.е.
+ 
+\begin_inset Formula $P_{A}\left(B\right)$
+\end_inset
+
+ , тогда 
+\begin_inset Formula $E_{\xi}=\int_{\Omega}\xi\left(w\right)P_{A}\left(d\omega\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Если бы было только 3 грани на кубике (всегда выпадает четное), то 
+\begin_inset Formula $P_{A}\left(B\right)$
+\end_inset
+
+, условное среднее даст нам среднее с учетом того ,что вероятности теперь
+ 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+№6.
+ Случайные процессы и их числовые характеристики
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Потоки сигма-алгебр
+\end_layout
+
+\begin_layout Standard
+\noindent
+последовательность вложенных сигма-алгебр 
+\begin_inset Formula ${\mathcal{F}}_{t}\subset{\mathcal{F}}_{T}\subset{\mathcal{F}}$
+\end_inset
+
+,
+\begin_inset Formula $t<T$
+\end_inset
+
+ называется 
+\series bold
+потоком
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Случайные процессы
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\left(\omega:\xi_{t}\left(\omega\right)\le x\right)\in{\mathcal{F}}_{t}\subset{\mathcal{F}}$
+\end_inset
+
+ 
+\begin_inset Formula $\forall$
+\end_inset
+
+
+\begin_inset Formula $t$
+\end_inset
+
+ - Порожден поток, 
+\begin_inset Formula $\xi\left(t,\omega\right)$
+\end_inset
+
+ - 
+\series bold
+случайный процесс
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Главный пример
+\series default
+ – пуассоновский процесс: 
+\begin_inset Formula 
+\[
+p\left(x\left(t\right)=k\right)=e^{-\lambda t}\frac{\left(\lambda t\right)^{k}}{k!}E\,\xi\left(t\right)=\lambda t,D\left(\xi\left(t\right)\right)=\lambda t
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\phi_{N}\left(z\right)=\sum_{k=0}^{\infty}z^{k}e^{-\lambda t}\frac{\left(\lambda t\right)^{k}}{k!}=e^{-\lambda t}\sum_{k=0}^{\infty}\frac{\left(z\lambda t\right)^{k}}{k!}=e^{-\lambda t}e^{z\lambda t}=e^{-\lambda t\left(1-z\right)}
+\]
+
+\end_inset
+
+???Гиперэкспоненциальное
+\begin_inset Formula $p=\sum_{}^{}a_{k}\lambda_{k}e^{-\lambda_{k}t}$
+\end_inset
+
+, Эрланговское, 
+\begin_inset Formula $F_{\varepsilon}\left(y\right)=\int_{0}^{y}\frac{x^{k}}{k!}e^{-\lambda x}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Здесь память можно не напрягать.
+ Можем просто написать 
+\begin_inset Formula $E\xi=\int_{0}^{\infty}x\cdot?;>B=>ABL$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Можем посчитать до конца если 
+\begin_inset Formula $k$
+\end_inset
+
+ - четное и через гамма-функцию, если 
+\begin_inset Formula $k$
+\end_inset
+
+ - нечетное.
+\end_layout
+
+\end_body
+\end_document
